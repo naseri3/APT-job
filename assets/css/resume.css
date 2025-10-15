@@ -1,0 +1,871 @@
+/* ===============================
+   🖥️ PC 버전 고정 레이아웃 (1280px)
+   =============================== */
+#subPage.resume {
+  max-width: 1280px !important;
+  width: 1280px !important;
+  margin: 0 auto !important;
+}
+
+/* 모바일 대응 (반응형 유지 원할 경우) */
+@media (max-width: 1280px) {
+  .container,
+  #subPage.resume {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 1rem !important;
+  }
+}
+#resume_body,
+#education_body,
+#employment_body,
+#training_body,
+#certificates_body,
+#military_body,
+#workPreference_body {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px 20px !important;
+    margin-bottom: 60px;
+}
+/* 이력서 타이틀 */
+#resume-title {
+    margin-bottom: 50px;
+}
+
+#resume-title h1 {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 20px;
+    color: #333;
+
+}
+
+#resume-title h1 .input-title {
+    font-weight: 500;
+    margin-left: 20px;
+    font-size: 2rem;
+    color: #000;
+}
+
+.fa-pencil {
+    color: #0071f3;
+    margin-left: 10px;
+}
+
+.form-field-item input::placeholder,
+.email-field input::placeholder,
+.address-field input::placeholder,
+.form-field-item textarea::placeholder {
+    color: #b0b0b0;
+}
+
+#resume-title-input {
+    width: 85%;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* 프로필 사진 */
+.photo-box {
+    position: relative;
+    width: 158px;
+    height: 210px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 프로필 사진 삭제 */
+.photo-delete-btn {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    width: 30px;
+    font-size: 20px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+/* 프로필 사진 업로드 */
+.photo-btn {
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    margin: 0;
+    padding: 6px 10px;
+    background-color: #0071f3;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* 인적사항 */
+.personal_info {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    /* 가운데 정렬 */
+    width: 100%;
+    flex-wrap: wrap;
+    /* 화면 좁아지면 줄바꿈 */
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+#user_info {
+    display: flex;
+    flex-wrap: wrap;
+    /* 필요 시 줄바꿈 */
+    gap: 10px;
+    padding: 0;
+    justify-content: center;
+}
+
+/* 공통 row */
+.form-field-row {
+    display: flex;
+}
+
+.form-field-item,
+.address-field {
+    flex: 1 1 300px;
+    /* 최소 300px, 가능하면 남은 공간 차지 */
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    /* 라벨과 인풋 세로 정렬 */
+    box-sizing: border-box;
+}
+
+.form-field-item:last-child {
+    gap: 0;
+}
+
+.form-field-item label,
+.email-wrap label {
+    flex: 0 0 120px;
+    margin: 0;
+}
+
+.form-field-item input[type="text"],
+.form-field-item input[type="tel"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-width: 0;
+    /* flexbox에서 overflow 방지 */
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* 주소 */
+.address-field-item input,
+.form-field-item textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-width: 0;
+    /* flexbox에서 overflow 방지 */
+    box-sizing: border-box;
+}
+
+/* 성별 체크박스 */
+.gender {
+    display: flex;
+    /* label들을 한 줄로 */
+    align-items: center;
+    gap: 10px;
+}
+
+.gender label {
+    display: flex;
+    /* 체크박스 + 텍스트 수평 정렬 */
+    align-items: center;
+    gap: 5px;
+    /* 체크박스와 텍스트 간격 */
+    cursor: pointer;
+}
+
+.gender input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+}
+
+.gender input[type="checkbox"]:last-child {
+    margin-left: 20px;
+}
+
+/* 체크되었을 때 색상 */
+.gender input[type="checkbox"]:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+    width: 20px !important;
+    /* 정사각형 */
+    height: 20px !important;
+    /* 정사각형 */
+}
+
+/* 체크 표시 */
+.gender input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* 이메일 전체 래퍼 */
+.email-wrap {
+    flex: 1 1 auto;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    /* 세로 가운데 정렬 */
+    gap: 15px;
+    box-sizing: border-box;
+}
+
+/* 이메일 입력 영역 */
+.email-field {
+    display: flex;
+    /* input, select 수평 배치 */
+    align-items: center;
+    /* 수직 가운데 정렬 */
+    flex: 1 1 auto;
+    /* 남은 공간 차지 */
+}
+
+/* @ 기호 */
+.email-field .email-at {
+    padding: 0 10px;
+    font-size: 18px;
+}
+
+/* input, select 스타일 */
+.email-field input {
+    width: 300px;
+    /* 원하는 고정 너비 */
+    flex: 0 0 auto;
+    /* flex 확장/축소 막기 */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.email-field select {
+    width: 150px;
+    /* 원하는 고정 너비 */
+    flex: 0 0 auto;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* 직접입력 */
+#userEmailDirect {
+    margin-left: 10px;
+}
+
+/* 주소 검색 */
+.address-wrap {
+    padding: 0 10px;
+}
+
+.address-field-item {
+    display: flex;
+    align-items: center;
+    /* 세로 중앙 정렬 */
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+.address-field-item .address-label {
+    flex: 0 0 auto;
+    /* 텍스트는 고정 크기 */
+    width: 120px;
+}
+
+.address-field-item input {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.zipcode {
+    width: 150px;
+}
+
+.basic-address {
+    width: 350px;
+}
+
+.detail-address {
+    width: 430px;
+}
+
+.searchPostBtn {
+    flex: 0 0 120px;
+}
+/* 우편검색, 직무검색, 지역검색 */
+.searchPostBtn, .work-job-search, .work-region-search {
+    padding: 8px;
+    font-size: 16px;
+}
+
+/* 학력 미만 */
+.education-level,
+.exam-label {
+    float: right;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.education-level input[type="checkbox"] {
+    transform: scale(1.5);
+    /* 1.5배 확대 */
+    margin-right: 10px;
+    /* 텍스트와 간격 조정 */
+}
+
+/* 학교 선택 */
+.education-field .form-field-item {
+    width: 1244px !important;
+}
+
+/* 학력, 경력 item */
+.high-school,
+.university-item,
+.employment-item,
+.training-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 0;
+}
+
+.education-label {
+    width: 120px;
+}
+
+.transfer-entry {
+    width: 50px !important;
+}
+
+.school-name,
+.major-name {
+    flex: 0 0 250px !important;
+    width: 250px !important;
+    box-sizing: border-box;
+}
+
+/* 학점 */
+#gpa {
+    flex: 0 0 80px;
+    width: 80px !important;
+    box-sizing: border-box;
+}
+
+.graduation-year,
+.admission-year {
+    flex: 0 0 160px !important;
+    width: 160px !important;
+    box-sizing: border-box;
+}
+
+/* 대입검정고시 & 편입 */
+#exam {
+    font-size: 18px;
+    flex: 0 0 130px;
+}
+
+#transfer,
+#is-working {
+    font-size: 18px;
+    flex: 0 0 70px;
+}
+.is-working {
+    margin-right: 10px;
+}
+
+.exam-checkbox,
+.transfer-checkbox,
+.is-working,
+.military-status,
+.employment-checkbox,
+.form-check-input,
+.preference {
+    transform: scale(1.5);
+    /* 버튼만 1.5배 확대 */
+}
+
+/* 추가 버튼 */
+.add-education-btn,
+.add-employment-btn,
+.add-training-btn,
+.add-certificates-btn {
+    padding: 8px;
+    font-size: 18px;
+    width: 200px;
+}
+
+#educationContainer {
+    padding: 0;
+}
+
+/* 삭제 */
+.remove-education-btn,
+.remove-employment-btn,
+.remove-training-btn,
+.remove-certificates-btn {
+    width: 80px;
+    font-size: 16px;
+}
+
+/* 고용보험 버튼 */
+#loadPensionBtn {
+    padding: 5px 10px;
+    background-color: white;
+    border: 1px solid #939393;
+    font-size: 1.05rem;
+    float: right;
+}
+
+.h-well img {
+    width: 20px;
+}
+
+/* 경력 */
+.form-field-item {
+    flex: 1 1 300px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    /* 라벨과 인풋 세로 정렬 */
+    box-sizing: border-box;
+}
+
+.form-field-item label {
+    flex: 0 0 120px;
+    margin: 0;
+}
+
+/* 월급, 교육시작일, 교육종료일, 취득일 */
+.salary-unit,
+.training-start,
+.training-end,
+.certificate-date {
+    width: 150px !important;
+}
+
+.salary-amount {
+    width: 300px !important;
+    /* 원하는 너비 */
+}
+
+.salary-type {
+    width: 110px !important;
+}
+
+/* 담당업무 */
+.responsibility {
+    height: 100px;
+    /* 기본 높이 */
+    min-height: 80px;
+    /* 최소 높이 */
+    max-height: 200px;
+    /* 최대 높이 */
+    resize: none;
+}
+
+/* 교육 내용 */
+.training-description {
+    height: 80px;
+    /* 기본 높이 */
+    resize: none;
+    /* 세로 방향만 크기 조절 가능 */
+}
+
+/* 군필 항목 */
+.military-item {
+    height: 60px;
+}
+
+.military-box, .disabled-box {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 10px;
+    background: #fafbff !important;
+}
+
+.military-box .form-label, .disabled-box .form-label {
+    font-weight: 500;
+    width: 80px;
+}
+/* 장애 */
+label.obstacle {
+    flex: 0 0 50px;
+}
+.notice-box strong {
+    font-weight: 600;
+}
+
+
+
+/* 희망근무조건 고용형태 */
+.work-employment-type,
+.work-salary-unit {
+    width: 150px !important;
+}
+
+/* 희망근무조건 직무입력, 지역입력 */
+.work-job,
+.work-salary-amount {
+    width: 300px !important;
+}
+.work-region {
+    width: 400px !important;
+}
+
+/* 희망근무조건 직무검색, 지역검색 */
+.work-job-search,
+.work-region-search,
+.work-salary-type {
+    width: 120px;
+}
+
+/* 자기소개서 */
+.self-introduction {
+    color: #b0b0b0;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* 자기소개서 미리보기 버튼 */
+#selfIntroduction-sample-btn {
+    padding: 5px 10px;
+    background-color: white;
+    border: 1px solid #939393;
+    font-size: 0.9rem;
+    float: right;
+    color: #0071f3;
+    font-weight: 500;
+    border-radius: 0;
+}
+
+/* 포트폴리오 */
+.font-small {
+    font-size: 15px;
+    font-weight: normal;
+    padding-left: 10px;
+}
+
+#portfolioFile {
+    width: 500px;
+}
+
+.file-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.file-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.file-list li button {
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+/* 포트폴리오 업로드 버튼 */
+#addPortfolioBtn {
+    width: 120px;
+    padding: 5px;
+    font-size: 15px;
+}
+
+/* 기본 이력서 설정 / 이력서 공개 여부 */
+#portfolio,
+#resume-settings {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px 20px;
+    margin-bottom: 30px;
+}
+
+.resume-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.resume-setting label {
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.resume-checkbox {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.resume-checkbox {
+    transform: scale(1.6);
+    /* 버튼만 1.5배 확대 */
+    margin-right: 10px;
+    /* 텍스트와 간격 */
+}
+
+/* 이력서 저장하기 */
+#saveResumeBtn {
+    width: 250px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+/* 필수 */
+.required-check {
+    color: #007bff;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+
+
+
+/* ========================= */
+/* 모달창 지역/직무 공통 레이아웃 */
+/* ========================= */
+.local h3, .occupation h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  
+  .region-options,
+  .occupation-options {
+    display: flex;
+    flex-wrap: wrap; /* 줄바꿈 허용 */
+    gap: 10px;
+    justify-content: flex-start;
+  }
+  
+  /* ========================= */
+  /* REGION(시/도) 버튼 */
+  /* ========================= */
+  .region-options .btn {
+    background-color: #a1a1a1;
+    color: #fff;
+    width: 120px;
+    font-size: 15px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+  }
+  
+  /* 선택됨(활성) — 파란색 유지 */
+  .region-options .btn.active,
+  .region-options .btn.active:hover,
+  .region-options .btn.active:focus {
+    background-color: #0d6efd;
+    color: #fff;
+  }
+  
+  /* 비활성 hover/focus — 회색 톤만 살짝 진하게 (파란색 금지) */
+  .region-options .btn:not(.active):hover,
+  .region-options .btn:not(.active):focus {
+    background-color: #8e8e8e;
+    color: #fff;
+  }
+  
+  /* ========================= */
+  /* 시/군/구 컨테이너 & 버튼 */
+  /* ========================= */
+  .district-options {
+    display: none; /* JS에서 제어 */
+    margin-top: 20px;
+    gap: 12px;
+  }
+  
+  /* 각 지역별 그룹 (JS에서 display:grid로 보이게 함) */
+  .district {
+    display: none; /* 기본 숨김 */
+    /* 고정 7열을 원하면 아래처럼: grid-template-columns: repeat(7, minmax(120px, 1fr)); */
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* 자동 줄바꿈 */
+    gap: 10px;
+  }
+  
+  .district .btn {
+    border: 1px solid #bcbcbc;
+    color: #6c757d;
+    font-size: 14px;
+    background-color: #fff;
+    white-space: normal; /* 버튼 내부 줄바꿈 허용 */
+    word-break: keep-all;
+    transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+  }
+  
+  .district .btn:hover,
+  .district .btn:focus {
+    background-color: #fff;
+    color: #0d6efd;
+    border-color: #0d6efd;
+  }
+  
+  /* 시/군/구 선택됨 — 파란 테두리 + 파란 글자(배경은 흰색 유지) */
+  .district .btn.active,
+  .district .btn.active:hover,
+  .district .btn.active:focus {
+    background-color: #fff;
+    color: #0d6efd;
+    border-color: #0d6efd;
+  }
+  
+  /* ========================= */
+  /* OCCUPATION(직무) 버튼 */
+  /* ========================= */
+  .occupation-options .btn {
+    background-color: #a1a1a1;
+    color: #fff;
+    width: 120px;
+    font-size: 15px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    transition: background-color .15s ease, color .15s ease;
+  }
+  
+  /* 직무 선택됨 — 파란색 유지 */
+  .occupation-options .btn.active,
+  .occupation-options .btn.active:hover,
+  .occupation-options .btn.active:focus {
+    background-color: #0d6efd;
+    color: #ffffff;
+  }
+  
+  /* 직무 비활성 hover/focus — 회색만 */
+  .occupation-options .btn:not(.active):hover,
+  .occupation-options .btn:not(.active):focus {
+    background-color: #8e8e8e;
+    color: #fff;
+  }
+  
+  /* ========================= */
+  /* 입력창 스타일 */
+  /* ========================= */
+  #regionInput,
+  #jobInput {
+    font-size: 14px;
+    font-weight: 400;
+    color: #9b9b9b;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    padding: 8px 12px;
+  }
+  
+  #regionInput:focus,
+  #jobInput:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: 0 0 4px rgba(13,110,253,0.4);
+  }
+  
+  #regionInput::placeholder,
+  #jobInput::placeholder {
+    color: #999;
+    font-style: italic;
+  }
+  
+/* 공통 안내 툴팁 */
+.privacy-tooltip {
+  display: none;
+  position: fixed;
+  width: 530px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.6;
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.privacy-tooltip ul {
+    padding-left: 20px;
+    margin: 8px 0 0 0;
+}
+
+/* info 아이콘 */
+.info-icon {
+  color: #6c757d;
+  font-size: 15px;
+  text-decoration: none;
+}
+.info-icon:hover {
+  color: #0d6efd;
+}
+
+/* 화살표 제거 */
+.privacy-tooltip::before {
+  display: none !important;
+}
+
+/* 모든 체크박스 스타일 */
+input[type="checkbox"] {
+  accent-color: #0d6efd;
+}
+
+/* 이력서 모달창 */
+pre {
+    font-family: "Noto Sans KR", "Malgun Gothic", "맑은 고딕", sans-serif;
+    font-size: 16px;
+}
