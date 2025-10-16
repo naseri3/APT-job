@@ -1,19 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
   // ✅ 위탁사 리스트 (이름, 로고, 링크)
   const companies = [
-    { name: "거창유지관리", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=거홍주지원(주)" },
-    { name: "경기진흥주택관리", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=경기건종주택관리" },
+    { name: "거창유지관리", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=거창유지관리" },
+    { name: "경기진흥주택관리", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=경기진흥주택관리" },
     { name: "광인산업", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=광인산업" },
     { name: "더씨앤(주)", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=더씨앤(주)" },
     { name: "(주)동우개발", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=(주)동우개발" },
-    { name: "(주)백운에프엠", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=(주)백록오피엠" },
-    { name: "부건피앤피(주)", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=부건개피(주)" },
+    { name: "(주)백운에프엠", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=(주)백운에프엠" },
+    { name: "부건피앤피(주)", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=부건피앤피(주)" },
     { name: "서림주택관리(주)", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=서림주택관리(주)" },
     { name: "서일개발", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=서일개발" },
-    { name: "신한영관리(주)", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=신한양관리(주)" },
+    { name: "신한영관리(주)", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=신한영관리(주)" },
     { name: "에이비엠", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=에이비엠" },
-    { name: "율산개발", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=울산개발" },
-    { name: "태룡에스디", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=태영에스디" },
+    { name: "율산개발", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=율산개발" },
+    { name: "태룡에스디", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=태룡에스디" },
     { name: "푸른종합주택관리", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=푸른종합주택관리" },
     { name: "한영파트너스FH", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=한영파트너스FH" },
   ];
