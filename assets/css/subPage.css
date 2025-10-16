@@ -336,3 +336,158 @@ td.company {
     background-color: #fff;
     color: #0055DB;
 }
+
+
+/* ================================
+   채용공고 상세페이지
+================================ */
+
+/* 상단 요약정보 */
+.job-summary {
+  border-top: 2px solid #0055DB;
+  padding-top: 40px;
+}
+.job-summary h3 {
+  font-size: 2.2rem;
+  color: #202020;
+}
+.job-summary h4 {
+  font-size: 1.5rem;
+  color: #696969;
+}
+
+/* 요약정보 그룹 */
+.job-summary-group {
+  border-top: 1px solid #A8A8A8;
+  border-bottom: 1px solid #A8A8A8;
+  margin-top: 20px;
+}
+.job-summary-group h6 {
+  font-size: 1.2rem;
+  color: #202020;
+  margin-bottom: 10px;
+}
+
+/* 지원조건, 근무조건, 단지정보 */
+.job-summaryBox-requirement,
+.job-summaryBox-condition,
+.job-summaryBox-complex {
+  line-height: 1.8;
+  padding: 20px;
+}
+.job-summaryBox-complex {
+  border-left: 1px solid #A8A8A8;
+}
+
+/* 지원하기 / 즐겨찾기 버튼 */
+.job-action-apply,
+.job-action-favorite {
+  width: 250px;
+  font-size: 1.1rem;
+  padding: 10px;
+  border-radius: 10px;
+}
+.job-action-favorite {
+  background-color: #939393;
+  border: none;
+}
+
+/* ================================
+   탭 (상세요강 / 단지정보)
+================================ */
+.nav-tabs .nav-link {
+  color: #555;
+  font-weight: 500;
+  width: 150px;
+}
+.nav-tabs .nav-link.active {
+  color: #0071f3;
+  font-weight: 700;
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff;
+}
+.nav-tabs .nav-link:hover {
+  color: #0071f3;
+}
+
+/* ================================
+   상세요강 테이블
+================================ */
+.job-detail__table th {
+  width: 20%;
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+.job-detail__table td {
+  width: 30%;
+  vertical-align: middle;
+}
+
+/* ================================
+   단지정보 섹션
+================================ */
+.job-complex__wrap {
+  margin-top: 1.5rem;
+}
+.complex-header-title {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.table-section-title {
+  background-color: #f8f9fa;
+  font-weight: 700;
+  text-align: left;
+}
+.job-complex__table th {
+  background-color: #fafafa;
+  color: #222;
+  font-weight: 600;
+  width: 20%;
+  vertical-align: middle;
+}
+.job-complex__table td {
+  color: #333;
+  background-color: #fff;
+  vertical-align: middle;
+}
+.job-complex__table th,
+.job-complex__table td {
+  padding: 10px 12px;
+  line-height: 1.6;
+}
+.job-complex__table + .job-complex__table {
+  margin-top: 1.5rem;
+}
+@media (max-width: 768px) {
+  .job-complex__table th,
+  .job-complex__table td {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+}
+
+/* 즐겨찾기 버튼 */
+.job-action-favorite {
+  background-color: #939393;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+/* hover 시 버튼만 살짝 밝게 */
+.job-action-favorite:hover {
+  background-color: #777;
+}
+
+/* active 상태일 때, 별만 노란색으로 */
+.job-action-favorite.active::first-letter {
+  color: #FFD700; /* 골드(노란 별) */
+}
+
+/* optional: 클릭 시 약간의 강조 */
+.job-action-favorite.active {
+  background-color: #777; /* 살짝 어두운 회색 유지 */
+}
+
