@@ -11,7 +11,7 @@ const jobsList = [
     company: "압구정신현대",
     apartmentSize: "1,942",
     endDate: "2025-09-01",
-    detailUrl: "detail1.html",
+    detailUrl: "detailPage.html?no=1",
   },
   {
     title: "서울_사무직",
@@ -21,7 +21,7 @@ const jobsList = [
     company: "현대아파트",
     apartmentSize: "214",
     endDate: "2025-09-01",
-    detailUrl: "detail2.html",
+    detailUrl: "detailPage.html?no=2",
   },
   {
     title: "시설주임 구인",
@@ -31,7 +31,7 @@ const jobsList = [
     company: "신평미소지움",
     apartmentSize: "409",
     endDate: "2025-09-10",
-    detailUrl: "detail3.html",
+    detailUrl: "detailPage.html?no=3",
   },
   {
     no: 4,
@@ -42,7 +42,7 @@ const jobsList = [
     company: "광모닝스카이",
     apartmentSize: "734",
     endDate: "2025-09-10",
-    detailUrl: "detail4.html",
+    detailUrl: "detailPage.html?no=4",
   },
   {
     title: "전기과장 구인",
@@ -52,7 +52,7 @@ const jobsList = [
     company: "계양센트레빌2단지",
     apartmentSize: "256",
     endDate: "2025-09-25",
-    detailUrl: "detail5.html",
+    detailUrl: "detailPage.html?no=5",
   },
   {
     title: "전기팀장 모집",
@@ -62,7 +62,7 @@ const jobsList = [
     company: "하안주공1단지",
     apartmentSize: "1,980",
     endDate: "2025-09-30",
-    detailUrl: "detail6.html",
+    detailUrl: "detailPage.html?no=6",
   },
   {
     title: "기전대리 채용",
@@ -72,7 +72,7 @@ const jobsList = [
     company: "양주옥정센터",
     apartmentSize: "500",
     endDate: "2025-09-30",
-    detailUrl: "detail7.html",
+    detailUrl: "detailPage.html?no=7",
   },
   {
     title: "경비원 채용",
@@ -82,7 +82,7 @@ const jobsList = [
     company: "가경뜨란채7단지",
     apartmentSize: "370",
     endDate: "2025-09-30",
-    detailUrl: "detail8.html",
+    detailUrl: "detailPage.html?no=8",
   },
   {
     title: "격일제 기전주임 채용(2인1조)_즉시근무가능자 우대",
@@ -92,7 +92,7 @@ const jobsList = [
     company: "힐스테이트인천역",
     apartmentSize: "746",
     endDate: "2025-09-30",
-    detailUrl: "detail9.html",
+    detailUrl: "detailPage.html?no=9",
   },
   {
     title: "기전직 직원",
@@ -102,7 +102,7 @@ const jobsList = [
     company: "서초진흥",
     apartmentSize: "615",
     endDate: "2025-09-30",
-    detailUrl: "detail10.html",
+    detailUrl: "detailPage.html?no=10",
   },
   {
     title: "시설주임 채용",
@@ -112,7 +112,7 @@ const jobsList = [
     company: "분당힐스아파트",
     apartmentSize: "520",
     endDate: "2025-10-05",
-    detailUrl: "detail11.html",
+    detailUrl: "detailPage.html?no=11",
   },
   {
     title: "전기팀 모집",
@@ -122,7 +122,7 @@ const jobsList = [
     company: "수원센트럴아파트",
     apartmentSize: "800",
     endDate: "2025-10-10",
-    detailUrl: "detail12.html",
+    detailUrl: "detailPage.html?no=12",
   },
   {
     title: "사무직 직원",
@@ -132,7 +132,7 @@ const jobsList = [
     company: "마포래미안",
     apartmentSize: "300",
     endDate: "2025-10-15",
-    detailUrl: "detail13.html",
+    detailUrl: "detailPage.html?no=13",
   },
   {
     title: "경리 대리 모집",
@@ -142,7 +142,7 @@ const jobsList = [
     company: "해운대블루아파트",
     apartmentSize: "400",
     endDate: "2025-10-20",
-    detailUrl: "detail14.html",
+    detailUrl: "detailPage.html?no=14",
   },
   {
     title: "시설팀 채용",
@@ -152,7 +152,7 @@ const jobsList = [
     company: "수성그린아파트",
     apartmentSize: "620",
     endDate: "2025-10-25",
-    detailUrl: "detail15.html",
+    detailUrl: "detailPage.html?no=15",
   },
   {
     title: "경비원 모집",
@@ -162,7 +162,7 @@ const jobsList = [
     company: "고양센트럴",
     apartmentSize: "350",
     endDate: "2025-10-28",
-    detailUrl: "detail16.html",
+    detailUrl: "detailPage.html?no=16",
   },
   {
     title: "전기과장 채용",
@@ -172,7 +172,7 @@ const jobsList = [
     company: "부평센트럴",
     apartmentSize: "400",
     endDate: "2025-11-01",
-    detailUrl: "detail17.html",
+    detailUrl: "detailPage.html?no=17",
   },
   {
     title: "기전팀 모집",
@@ -182,7 +182,7 @@ const jobsList = [
     company: "창원블루아파트",
     apartmentSize: "480",
     endDate: "2025-11-05",
-    detailUrl: "detail18.html",
+    detailUrl: "detailPage.html?no=18",
   },
   {
     title: "사무직 채용",
@@ -192,7 +192,7 @@ const jobsList = [
     company: "송파리버뷰",
     apartmentSize: "210",
     endDate: "2025-11-10",
-    detailUrl: "detail19.html",
+    detailUrl: "detailPage.html?no=19",
   },
   {
     title: "경리과장 모집",
@@ -202,7 +202,7 @@ const jobsList = [
     company: "유성타워아파트",
     apartmentSize: "580",
     endDate: "2025-11-15",
-    detailUrl: "detail20.html",
+    detailUrl: "detailPage.html?no=20",
   },
   {
     title: "전기팀장 모집",
@@ -212,7 +212,7 @@ const jobsList = [
     company: "청주모닝아파트",
     apartmentSize: "650",
     endDate: "2025-11-20",
-    detailUrl: "detail21.html",
+    detailUrl: "detailPage.html?no=21",
   },
   {
     title: "시설주임 모집",
@@ -222,7 +222,7 @@ const jobsList = [
     company: "천안블루아파트",
     apartmentSize: "530",
     endDate: "2025-11-25",
-    detailUrl: "detail22.html",
+    detailUrl: "detailPage.html?no=22",
   },
   {
     title: "경비원 채용",
@@ -232,7 +232,7 @@ const jobsList = [
     company: "안양센트럴",
     apartmentSize: "420",
     endDate: "2025-11-30",
-    detailUrl: "detail23.html",
+    detailUrl: "detailPage.html?no=23",
   },
   {
     title: "사무직 모집",
@@ -242,7 +242,7 @@ const jobsList = [
     company: "강서그린아파트",
     apartmentSize: "310",
     endDate: "2025-12-05",
-    detailUrl: "detail24.html",
+    detailUrl: "detailPage.html?no=24",
   },
   {
     title: "전기과장 모집",
@@ -252,7 +252,7 @@ const jobsList = [
     company: "용인센트럴",
     apartmentSize: "560",
     endDate: "2025-12-10",
-    detailUrl: "detail25.html",
+    detailUrl: "detailPage.html?no=25",
   },
   {
     title: "기전대리 채용",
@@ -262,7 +262,7 @@ const jobsList = [
     company: "제천블루아파트",
     apartmentSize: "490",
     endDate: "2025-12-15",
-    detailUrl: "detail26.html",
+    detailUrl: "detailPage.html?no=26",
   },
   {
     title: "경비원 모집",
@@ -272,7 +272,7 @@ const jobsList = [
     company: "김해센트럴",
     apartmentSize: "360",
     endDate: "2025-12-20",
-    detailUrl: "detail27.html",
+    detailUrl: "detailPage.html?no=27",
   },
   {
     title: "시설팀 모집",
@@ -282,7 +282,7 @@ const jobsList = [
     company: "남구블루아파트",
     apartmentSize: "600",
     endDate: "2025-12-25",
-    detailUrl: "detail28.html",
+    detailUrl: "detailPage.html?no=28",
   },
   {
     title: "사무직 직원 모집",
@@ -292,7 +292,7 @@ const jobsList = [
     company: "성동리버뷰",
     apartmentSize: "230",
     endDate: "2025-12-30",
-    detailUrl: "detail29.html",
+    detailUrl: "detailPage.html?no=29",
   },
   {
     title: "전기팀장 채용",
@@ -302,7 +302,7 @@ const jobsList = [
     company: "달서센트럴",
     apartmentSize: "700",
     endDate: "2026-01-05",
-    detailUrl: "detail30.html",
+    detailUrl: "detailPage.html?no=30",
   },
   {
     title: "경리과장 모집",
@@ -312,7 +312,7 @@ const jobsList = [
     company: "노원타워아파트",
     apartmentSize: "400",
     endDate: "2026-01-10",
-    detailUrl: "detail31.html",
+    detailUrl: "detailPage.html?no=31",
   },
   {
     title: "전기팀 모집",
@@ -322,7 +322,7 @@ const jobsList = [
     company: "부천센트럴",
     apartmentSize: "550",
     endDate: "2026-01-15",
-    detailUrl: "detail32.html",
+    detailUrl: "detailPage.html?no=32",
   },
   {
     title: "기전직 채용",
@@ -332,7 +332,7 @@ const jobsList = [
     company: "연수블루아파트",
     apartmentSize: "480",
     endDate: "2026-01-20",
-    detailUrl: "detail33.html",
+    detailUrl: "detailPage.html?no=33",
   },
   {
     title: "경비원 모집",
@@ -342,7 +342,7 @@ const jobsList = [
     company: "동대문센트럴",
     apartmentSize: "340",
     endDate: "2026-01-25",
-    detailUrl: "detail34.html",
+    detailUrl: "detailPage.html?no=34",
   },
   {
     title: "시설주임 채용",
@@ -352,7 +352,7 @@ const jobsList = [
     company: "평택블루아파트",
     apartmentSize: "520",
     endDate: "2026-01-30",
-    detailUrl: "detail35.html",
+    detailUrl: "detailPage.html?no=35",
   },
   {
     title: "사무직 직원 모집",
@@ -362,7 +362,7 @@ const jobsList = [
     company: "은평센트럴",
     apartmentSize: "250",
     endDate: "2026-02-05",
-    detailUrl: "detail36.html",
+    detailUrl: "detailPage.html?no=36",
   },
   {
     title: "전기과장 채용",
@@ -372,7 +372,7 @@ const jobsList = [
     company: "사상센트럴",
     apartmentSize: "580",
     endDate: "2026-02-10",
-    detailUrl: "detail37.html",
+    detailUrl: "detailPage.html?no=37",
   },
   {
     title: "기전팀 모집",
@@ -382,7 +382,7 @@ const jobsList = [
     company: "동구블루아파트",
     apartmentSize: "460",
     endDate: "2026-02-15",
-    detailUrl: "detail38.html",
+    detailUrl: "detailPage.html?no=38",
   },
   {
     title: "경리과장 모집",
@@ -392,7 +392,7 @@ const jobsList = [
     company: "강북타워아파트",
     apartmentSize: "420",
     endDate: "2026-02-20",
-    detailUrl: "detail39.html",
+    detailUrl: "detailPage.html?no=39",
   },
   {
     title: "전기팀장 모집",
@@ -402,7 +402,7 @@ const jobsList = [
     company: "의정부센트럴",
     apartmentSize: "610",
     endDate: "2026-02-25",
-    detailUrl: "detail40.html",
+    detailUrl: "detailPage.html?no=40",
   },
   {
     title: "시설주임 채용",
@@ -412,7 +412,7 @@ const jobsList = [
     company: "서구블루아파트",
     apartmentSize: "540",
     endDate: "2026-03-01",
-    detailUrl: "detail41.html",
+    detailUrl: "detailPage.html?no=41",
   },
   {
     title: "경비원 모집",
@@ -422,7 +422,7 @@ const jobsList = [
     company: "아산센트럴",
     apartmentSize: "370",
     endDate: "2026-03-05",
-    detailUrl: "detail42.html",
+    detailUrl: "detailPage.html?no=42",
   },
   {
     title: "사무직 직원 모집",
@@ -432,7 +432,7 @@ const jobsList = [
     company: "용산그린아파트",
     apartmentSize: "260",
     endDate: "2026-03-10",
-    detailUrl: "detail43.html",
+    detailUrl: "detailPage.html?no=43",
   },
   {
     title: "전기과장 모집",
@@ -442,7 +442,7 @@ const jobsList = [
     company: "구미센트럴",
     apartmentSize: "590",
     endDate: "2026-03-15",
-    detailUrl: "detail44.html",
+    detailUrl: "detailPage.html?no=44",
   },
   {
     title: "기전대리 채용",
@@ -452,7 +452,7 @@ const jobsList = [
     company: "진주블루아파트",
     apartmentSize: "470",
     endDate: "2026-03-20",
-    detailUrl: "detail45.html",
+    detailUrl: "detailPage.html?no=45",
   },
   {
     title: "시설팀 모집",
@@ -462,7 +462,7 @@ const jobsList = [
     company: "북구블루아파트",
     apartmentSize: "560",
     endDate: "2026-03-25",
-    detailUrl: "detail46.html",
+    detailUrl: "detailPage.html?no=46",
   },
   {
     title: "경비원 채용",
@@ -472,7 +472,7 @@ const jobsList = [
     company: "김포센트럴",
     apartmentSize: "380",
     endDate: "2026-03-30",
-    detailUrl: "detail47.html",
+    detailUrl: "detailPage.html?no=47",
   },
   {
     title: "사무직 모집",
@@ -482,7 +482,7 @@ const jobsList = [
     company: "중랑그린아파트",
     apartmentSize: "270",
     endDate: "2026-04-05",
-    detailUrl: "detail48.html",
+    detailUrl: "detailPage.html?no=48",
   },
   {
     title: "전기팀장 채용",
@@ -492,7 +492,7 @@ const jobsList = [
     company: "시흥센트럴",
     apartmentSize: "630",
     endDate: "2026-04-10",
-    detailUrl: "detail49.html",
+    detailUrl: "detailPage.html?no=49",
   },
   {
     title: "기전직 직원",
@@ -502,7 +502,7 @@ const jobsList = [
     company: "강동타워아파트",
     apartmentSize: "500",
     endDate: "2026-04-15",
-    detailUrl: "detail50.html",
+    detailUrl: "detailPage.html?no=50",
   },
 ];
 
