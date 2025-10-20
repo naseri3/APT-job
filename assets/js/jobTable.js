@@ -33,7 +33,7 @@ const jobs = [
     salary: "월 4,686,350 (세전)",
     company: "압구정신현대",
     apartmentSize: "1,942",
-    endDate: "2025-09-30",
+    endDate: "2025-12-31",
     detailUrl: "detail1.html",
   },
   {
@@ -44,7 +44,7 @@ const jobs = [
     company: "현대아파트",
     salary: "월 3,200,000 (세전)",
     apartmentSize: "214",
-    endDate: "2025-09-20",
+    endDate: "2025-12-31",
     detailUrl: "detail2.html",
   },
   {
@@ -55,7 +55,7 @@ const jobs = [
     company: "신평신성미소지움아파트",
     salary: "월 3,400,000 (세전)",
     apartmentSize: "409",
-    endDate: "2025-09-30",
+    endDate: "2025-12-31",
     detailUrl: "detail2.html",
   },
   {
@@ -66,7 +66,7 @@ const jobs = [
     company: "강서동광모닝스카이",
     salary: "월 2,850,000 (세전)",
     apartmentSize: "734",
-    endDate: "2025-09-15",
+    endDate: "2025-12-31",
     detailUrl: "detail2.html",
   },
   {
@@ -77,7 +77,7 @@ const jobs = [
     company: "계양센트레빌2단지아파트",
     salary: "월 3,678,000 (세전)",
     apartmentSize: "256",
-    endDate: "2025-09-25",
+    endDate: "2025-12-31",
     detailUrl: "detail2.html",
   },
   {
@@ -88,7 +88,7 @@ const jobs = [
     company: "하안주공1단지",
     salary: "월 4,190,000 (세전)",
     apartmentSize: "1,980",
-    endDate: "2025-09-10",
+    endDate: "2025-12-31",
     detailUrl: "detail2.html",
   },
   {
@@ -99,7 +99,7 @@ const jobs = [
     company: "양주옥정메타엑스지식산업센터",
     salary: "월 3,250,000 (세전)",
     apartmentSize: "500",
-    endDate: "2025-09-30",
+    endDate: "2025-12-31",
     detailUrl: "detail2.html",
   },
   {
@@ -110,7 +110,7 @@ const jobs = [
     company: "가경뜨란채7단지",
     salary: "월 2,350,000 (세전)",
     apartmentSize: "370",
-    endDate: "2025-09-30",
+    endDate: "2025-12-31",
     detailUrl: "detail2.html",
   },
   {
@@ -121,7 +121,7 @@ const jobs = [
     company: "힐스테이트인천시청역",
     salary: "월 3,284,830 (세전)",
     apartmentSize: "746",
-    endDate: "2025-09-30",
+    endDate: "2025-12-31",
     detailUrl: "detail2.html",
   },
   {
@@ -132,7 +132,7 @@ const jobs = [
     company: "서초진흥",
     salary: "월 3,120,000 (세전)",
     apartmentSize: "615",
-    endDate: "2025-09-30",
+    endDate: "2025-12-31",
     detailUrl: "detail2.html",
   }
 ];
