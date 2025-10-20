@@ -1,0 +1,99 @@
+/* -----------------------
+   ✅ 인쇄 전용 스타일
+----------------------- */
+@media print {
+  /* A4 세로 맞춤 + 여백 제거 */
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+
+  /* 배경색, 그림자 제거 */
+  body {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* 인쇄 불필요한 요소 숨기기 */
+  header, footer,
+  .job-action-apply,
+  .job-action-favorite,
+  .job-action-print,
+  /* 🔽 버튼만 숨기고, 탭은 유지하도록 변경 */
+  .btn:not(.nav-link) {
+    display: none !important;
+  }
+
+  /* 본문 너비 고정 */
+  #subPage.job-detail.container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* 탭 디자인 유지 */
+  .nav-tabs {
+    display: flex !important;
+    margin-bottom: 15px !important;
+  }
+
+  .nav-tabs .nav-link {
+    display: inline-block !important;
+    color: #515151 !important;
+    padding: 8px 16px !important;
+    margin-right: 4px !important;
+    font-weight: bold !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  .nav-tabs .nav-link.active {
+    color: #0071f3 !important;
+  }
+
+  /* 표 스타일 */
+  #jobTabContent {
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .table {
+    font-size: 15px;
+    border: 0.5px solid #7a7a7a;
+    width: 1020px !important;
+  }
+
+  th {
+    background: #f2f2f2 !important;
+    -webkit-print-color-adjust: exact;
+    width: 15% !important;
+    padding: 10px !important;
+  }
+
+  /* 제목 크기 조정 */
+  h2, h3 {
+    color: #000 !important;
+    margin-bottom: 10px;
+  }
+
+  /* 페이지 나누기 방지 */
+  .job-summary, .job-detail__table, .job-complex__table {
+    page-break-inside: avoid;
+  }
+
+  .job-summary-group {
+    border: 0 none !important;
+  }
+
+  .job-summaryBox-requirement,
+  .job-summaryBox-complex,
+  .job-summaryBox-condition {
+    border-top: 1px solid #A8A8A8 !important;
+    border-bottom: 1px solid #A8A8A8 !important;
+  }
+
+  .job-summaryBox-complex {
+    border-left: 1px solid #A8A8A8 !important;
+  }
+}
