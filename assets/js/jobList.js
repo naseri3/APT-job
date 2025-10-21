@@ -34,7 +34,6 @@ const jobsList = [
     detailUrl: "detailPage.html?no=3",
   },
   {
-    no: 4,
     title: "경리과장 모집",
     region: "세종 > 세종시",
     jobType: "경리",
