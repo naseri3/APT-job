@@ -1,0 +1,485 @@
+/* ===============================
+   🖥️ PC 버전 고정 레이아웃 (1280px)
+   =============================== */
+
+/* ① resume-view 전체 폭 */
+#resume-view {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* 중앙 정렬 */
+}
+
+/* ② 내부 container를 1280px 고정 */
+#resume-view > .container {
+  width: 1280px !important;
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* ③ 모바일 대응 (반응형 유지 시) */
+@media (max-width: 1280px) {
+  #resume-view > .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 1rem !important;
+  }
+}
+
+
+/* ===============================
+🔹 이력서 보기 타이틀
+=============================== */
+#resumeView-title {
+    margin-top: 50px;
+    padding: 0;
+}
+#resumeView-title h1 {
+    font-size: 1.8rem;
+    color: #969696;
+}
+.input-title {
+    color: #333333;
+}
+
+/* ===============================
+  🔹 이력서 수정하기 버튼
+  =============================== */
+.edit-resume-btn {
+    width: 200px;
+    float: right;
+    font-size: 16px;
+}
+
+/* ===============================
+  🔹 프로필 사진
+  =============================== */
+.photo-box-view {
+    position: relative;
+    width: 180px;
+    height: 230px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.photo-box-view img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.photo-box-view img:before,
+.photo-box-view img:after {
+    display: none !important;
+}
+
+.photo-box-view img[src=""],
+.photo-box-view img:not([src]) {
+    visibility: hidden;
+}
+
+.photo-box-view img:empty {
+    display: none;
+}
+
+/* broken image 아이콘 숨기기 */
+.photo-box-view img {
+    font-size: 0;
+    color: transparent;
+}
+/* 이테시스 취업패스 마크 */
+.etesys-mark img {
+    width: 100%;
+}
+
+
+/* ===============================
+  🔹 인적사항
+  =============================== */
+.userView-name {
+    font-size: 22px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    color: #333333;
+}
+.userView-Birth {
+    color: #666666;
+}
+
+/* ===============================
+  🔹 희망 조건
+  =============================== */
+.desired-field {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    padding: 10px;
+    border-radius: 5px;
+    line-height: 1.5;
+}
+.desired-field span {
+    font-size: 16px;
+    font-weight: 400;
+    color: #666666;
+    display: block;
+}
+#userdesired-region1 {
+    margin-top: 5px;
+}
+#userdesired-region1,
+#userdesired-region2 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000 !important;
+}
+#userdesired-salary {
+    font-size: 20px;
+    color: #000;
+    font-weight: 600;
+}
+#userdesired-job {
+    margin-top: 5px;
+    font-weight: 600;
+    color: #000;
+}
+
+/* ===============================
+  🔹 공통 섹션 타이틀
+  =============================== */
+#personal-box,
+#employment-box,
+#career-box,
+#training-box,
+#certificates-box,
+#preference-box,
+#selfIntroduction-box,
+#portfolio-box {
+    padding: 0 10px;
+}
+#employment-box h4,
+#career-box h4,
+#training-box h4,
+#certificates-box h4,
+#preference-box h4,
+#selfIntroduction-box h4,
+#portfolio-box h4 {
+    padding: 15px 0;
+    color: #0056b3;
+    font-weight: 500;
+}
+
+/* ===============================
+  🔹 공통 리스트 스타일
+  =============================== */
+.employment-list,
+.career-list,
+.training-list,
+.certificates-list,
+.preference-list,
+.self-introduction-list,
+.portfolio-list {
+    border-top: 1px solid #777;
+}
+.employment-item,
+.career-item,
+.training-item,
+.certificates-item,
+.preference-item,
+.self-introduction-item,
+.portfolio-item {
+    border-bottom: 1px solid #dddddd;
+    padding: 15px 10px;
+    background-color: #ffffff;
+}
+.employment-item .fw-semibold,
+.employment-item .fw-bold,
+.career-item .fw-semibold,
+.career-item .fw-bold,
+.training-item .fw-semibold,
+.training-item .fw-bold,
+.certificates-item .fw-semibold,
+.certificates-item .fw-bold,
+.preference-item .fw-semibold,
+.preference-item .fw-bold,
+.self-introduction-item .fw-semibold,
+.self-introduction-item .fw-bold,
+.portfolio-item .fw-semibold,
+.portfolio-item .fw-bold {
+    color: #333333;
+}
+.employment-item .text-secondary,
+.career-item .text-secondary,
+.training-item .text-secondary,
+.certificates-item .text-secondary,
+.preference-item .text-secondary,
+.self-introduction-item .text-secondary,
+.portfolio-item .text-secondary {
+    color: #666666 !important;
+}
+/* ===============================
+  🔹 경력/신입 배지 
+    =============================== */
+.career-badge {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 10px;
+    margin-left: 15px;
+    vertical-align: middle;
+    color: #fff;
+}
+
+/* 경력용 파란색 */
+.career-badge.career {
+    background-color: #0d6efd; /* 부트스트랩 기본 파랑 */
+}
+
+/* 신입용 초록색 */
+.career-badge.rookie {
+    background-color: #6b6b6b; /* 부트스트랩 초록 */
+}
+
+/* ===============================
+  🧑‍🎓 인적사항 (personal)
+  =============================== */
+#userName {
+    margin-left: 10px;
+}
+
+/* ===============================
+  🎓 학력 (employment)
+  =============================== */
+.employment-detail {
+    line-height: 1.4;
+    color: #666666;
+    font-size: 14px;
+}
+
+/* ===============================
+  💼 경력 (career)
+  =============================== */
+.total-career {
+    color: #d32f2f;
+    font-size: 16px;
+    font-weight: 500;
+}
+.career-task li::marker {
+    color: #999999;
+}
+
+/* ===============================
+  🎯 교육이수 (training)
+  =============================== */
+.training-item {
+    line-height: 1.6;
+}
+.training-item .fw-bold {
+    font-size: 16px;
+}
+.training-item .text-muted {
+    font-size: 14px;
+    color: #888888;
+}
+
+/* ===============================
+  🧾 자격증 (certificates)
+  =============================== */
+.certificates-item {
+    line-height: 1.6;
+}
+.certificates-item .fw-bold {
+    font-size: 16px;
+}
+.certificates-item .text-muted {
+    font-size: 14px;
+    color: #888888;
+}
+
+/* ===============================
+  🪪 취업우대 / 병역 (preference)
+  =============================== */
+.preference-item {
+    line-height: 1.8;
+    padding: 10px 0;
+}
+.preference-line {
+    display: flex;
+    gap: 20px;
+    padding: 10px 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.preference-line:last-child {
+    border-bottom: none;
+}
+.preference-line .label {
+    width: 120px;
+    min-width: 100px;
+    color: #333333;
+    font-weight: 500;
+}
+.preference-line .value {
+    color: #666666;
+    font-weight: 400;
+    flex: 1;
+    word-break: keep-all;
+}
+
+/* ===============================
+  📝 자기소개서 (selfIntroduction)
+  =============================== */
+.self-introduction-item {
+    padding: 20px 10px;
+    background-color: #ffffff;
+    line-height: 1.8;
+}
+.intro-title {
+    font-size: 18px;
+    color: #333333;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.intro-content {
+    font-size: 15px;
+    color: #555555;
+    white-space: pre-line; /* JSON 줄바꿈 유지 */
+}
+
+/* ===============================
+  💼 포트폴리오 (portfolio)
+  =============================== */
+.portfolio-file-link,
+.portfolio-file-text {
+    font-size: 15px;
+    color: #000;
+    font-weight: 400;
+    word-break: break-all;
+}
+.portfolio-file-link {
+    color: #0056b3;
+    text-decoration: none;
+}
+.portfolio-file-link:hover {
+    text-decoration: underline;
+}
+/* ===============================
+    🖋️ 하단 이력서 수정 버튼
+    =============================== */
+.resume-bottom-btn {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 80px;
+}
+
+.edit-resume-btn-bottom {
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    width: 300px;
+    padding: 10px;
+}
+.print-resume-btn {
+  border: none;
+  background-color: #6c757d; /* ✅ 회색 */
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 5px;
+  width: 300px;
+  padding: 10px;
+}
+
+.print-resume-btn:hover {
+  background-color: #5a6268; /* hover 시 약간 진한 회색 */
+  color: #fff;
+}
+
+
+
+/* ===========================================
+   🖨️ 인쇄 시 화면 그대로 출력 (디자인 유지)
+   =========================================== */
+@media print {
+  html, body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    zoom: 1 !important;
+  }
+
+  /* ✅ header, footer, 버튼류만 숨김 */
+  header,
+  footer,
+  .resume-bottom-btn,
+  .navbar,
+  .btn,
+  .edit-resume-btn-bottom,
+  #backToTop {
+    display: none !important;
+  }
+
+  /* ✅ 나머지는 화면 그대로 유지 */
+  body * {
+    visibility: visible !important;
+    transform: none !important;
+    position: static !important;
+  }
+  /* ✅ 컨테이너 중앙정렬 깨짐 방지 */
+  .container {
+    max-width: none !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  /* ✅ 인쇄용에서 강제 줄바꿈 방지 */
+  #resume-view {
+    page-break-before: auto;
+    page-break-after: auto;
+    page-break-inside: avoid;
+  }
+
+  /* ✅ 프로필/이력서 영역 고정 (틀 깨짐 방지) */
+  #personal-box {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-start !important;
+  }
+
+  #personal-box .photo-box-view {
+    flex: 0 0 auto !important;
+    margin-right: 1rem !important;
+  }
+
+  #personal-box .col-8 {
+    flex: 1 !important;
+  }
+
+  #personal-box .ms-4 {
+    margin-left: 0.25rem !important; /* Bootstrap ms-1 값 */
+  }
+
+  /* ✅ 여백 최소화 (왼쪽 들뜸 방지) */
+  main#resume-view {
+    margin: 0 !important;
+    padding: 0 10mm !important;
+  }
+
+  /* 희망지역 */
+  .desired-field {
+    font-size: 0.8rem !important;
+    font-weight: normal !important;
+  }
+  .etesys-mark {
+    display: none !important;
+  }
+}
