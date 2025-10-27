@@ -24,6 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // 상·하단 버튼 동기화
       favoriteBtns.forEach(b => b.classList.toggle("active", isActive));
+<<<<<<< HEAD
+=======
+
+>>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
       localStorage.setItem("favorites", JSON.stringify(favorites));
     });
   });
@@ -39,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+<<<<<<< HEAD
 
 // ===============================
 // 목록보기 버튼 → 이전 페이지로 이동
@@ -55,3 +60,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+=======
+>>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de

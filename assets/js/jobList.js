@@ -517,6 +517,7 @@ let currentPage = 1;
 let currentStatus = "전체"; // 초기값
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
+<<<<<<< HEAD
 // ===================================
 // 필터 적용 함수 (3개월 노출 제한 포함)
 // ===================================
@@ -524,10 +525,16 @@ function getFilteredJobs() {
   return jobsList.filter(job => {
     if (!job.endDate) return true;
 
+=======
+// 필터 적용 함수
+function getFilteredJobs() {
+  return jobsList.filter(job => {
+>>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
     const end = new Date(job.endDate);
     end.setHours(23, 59, 59, 999);
     const expired = today > end;
 
+<<<<<<< HEAD
     // 🔹 마감된 공고라도 마감일 + 3개월 이내면 유지
     const visibleUntil = new Date(end);
     visibleUntil.setMonth(end.getMonth() + 3);
@@ -545,6 +552,15 @@ function getFilteredJobs() {
 // ===================================
 // 렌더링 함수
 // ===================================
+=======
+    if (currentStatus === "채용중") return !expired;
+    if (currentStatus === "마감") return expired;
+    return true; // 전체
+  });
+}
+
+// 렌더링 함수
+>>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
 function renderJobs() {
   tableBody.innerHTML = "";
 
@@ -576,6 +592,7 @@ function renderJobs() {
 
     const tr = document.createElement("tr");
 
+<<<<<<< HEAD
     // 🔹 마감된 공고도 클릭 가능
     tr.addEventListener("click", (e) => {
       if (e.target.classList.contains("favorite-star")) return;
@@ -583,13 +600,26 @@ function renderJobs() {
     });
 
     // 🔹 날짜 색상 유지
+=======
+    // 클릭 시 상세보기 (별 클릭 제외)
+    tr.addEventListener("click", (e) => {
+      if (e.target.classList.contains("favorite-star")) return;
+      if (!expired) window.location.href = job.detailUrl;
+    });
+
+>>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
     const endDateHtml = expired
       ? `<span style="color:#999;">${job.endDate}</span>`
       : `<span style="color:red; font-weight:bold;">${job.endDate}</span>`;
 
+<<<<<<< HEAD
     // 🔹 마감 여부에 따라 버튼만 다르게 표시
     const buttonHtml = expired
       ? `<button class="btn btn-expired">마감</button>`
+=======
+    const buttonHtml = expired
+      ? `<button class="btn btn-expired" disabled>마감</button>`
+>>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
       : `<button class="btn btn-apply">상세보기</button>`;
 
     tr.innerHTML = `
@@ -608,9 +638,15 @@ function renderJobs() {
       <td>${buttonHtml}</td>
     `;
 
+<<<<<<< HEAD
     // 버튼 클릭 시 tr 이벤트 막기 + 이동
     const button = tr.querySelector("button");
     if (button) {
+=======
+    // 버튼 클릭 시 tr 이벤트 막기
+    const button = tr.querySelector("button");
+    if (button && !expired) {
+>>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
       button.addEventListener("click", (e) => {
         e.stopPropagation();
         window.location.href = job.detailUrl;
@@ -640,9 +676,13 @@ function renderJobs() {
   renderPagination(filtered.length);
 }
 
+<<<<<<< HEAD
 // ===================================
 // 페이지네이션 렌더링
 // ===================================
+=======
+// 페이지네이션 렌더링
+>>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
 function renderPagination(totalItems) {
   const totalPages = Math.ceil(totalItems / pageSize);
   pagination.innerHTML = "";
@@ -687,9 +727,13 @@ function renderPagination(totalItems) {
   pagination.appendChild(next);
 }
 
+<<<<<<< HEAD
 // ===================================
 // 상태 라디오 변경 이벤트
 // ===================================
+=======
+// 상태 라디오 변경 이벤트
+>>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
 statusRadios.forEach(radio => {
   radio.addEventListener("change", (e) => {
     currentStatus = e.target.value;
@@ -698,9 +742,13 @@ statusRadios.forEach(radio => {
   });
 });
 
+<<<<<<< HEAD
 // ===================================
 // 페이지 크기 변경
 // ===================================
+=======
+// 페이지 크기 변경
+>>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
 if (pageSizeSelect) {
   pageSizeSelect.addEventListener("change", (e) => {
     pageSize = parseInt(e.target.value);

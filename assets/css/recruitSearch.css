@@ -206,6 +206,24 @@
     color: #000;
     margin-right: 4px;
   }
+<<<<<<< HEAD
+=======
+  
+  /* 검색어 제거 버튼 */
+  /* .selected-box .selected-line span .remove {
+    margin-left: 8px;
+    cursor: pointer;
+    color: #666;
+    font-weight: bold;
+  }  
+  /* 제거 버튼 
+  .selected-box .selected-line span .remove {
+    margin-left: 8px;
+    cursor: pointer;
+    color: #666;
+    font-weight: bold;
+  } */
+>>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
 
   /* 검색어 제거 스타일 */
   .selected-line span {

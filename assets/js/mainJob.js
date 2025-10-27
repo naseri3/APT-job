@@ -11,7 +11,11 @@ const mainJobs = [
     experience: "경력 3년 이상",
     education: "학력 무관",
     deadline: "2025-12-31",
+<<<<<<< HEAD
     button: { text: "상세보기", url: "detailPage.html?no=1" },
+=======
+    button: { text: "상세보기", url: "#" },
+>>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
   },
   {
     company: "신평신성미소지움아파트",
@@ -22,7 +26,11 @@ const mainJobs = [
     experience: "경력 무관",
     education: "고졸 이상",
     deadline: "2025-12-31",
+<<<<<<< HEAD
     button: { text: "상세보기", url: "detailPage.html?no=2" },
+=======
+    button: { text: "상세보기", url: "#" },
+>>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
   },
   {
     company: "강서동광모닝스카이",
@@ -33,7 +41,11 @@ const mainJobs = [
     experience: "경력 5년 이상",
     education: "학력 무관",
     deadline: "2025-12-31",
+<<<<<<< HEAD
     button: { text: "상세보기", url: "detailPage.html?no=3" },
+=======
+    button: { text: "상세보기", url: "#" },
+>>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
   },
   {
     company: "계약센트레빌2단지아파트",
@@ -44,7 +56,11 @@ const mainJobs = [
     experience: "경력 무관",
     education: "학력 무관",
     deadline: "2025-12-31",
+<<<<<<< HEAD
     button: { text: "상세보기", url: "detailPage.html?no=4" },
+=======
+    button: { text: "상세보기", url: "#" },
+>>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
   },
   {
     company: "하안주공1단지",
@@ -55,7 +71,11 @@ const mainJobs = [
     experience: "경력 10년 이상",
     education: "학력 무관",
     deadline: "2025-12-31",
+<<<<<<< HEAD
     button: { text: "상세보기", url: "detailPage.html?no=5" },
+=======
+    button: { text: "상세보기", url: "#" },
+>>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
   },
   {
     company: "양주옥정메타엑스지식산업센터",
@@ -66,7 +86,11 @@ const mainJobs = [
     experience: "경력 무관",
     education: "고졸 이상",
     deadline: "2025-12-31",
+<<<<<<< HEAD
     button: { text: "상세보기", url: "detailPage.html?no=6" },
+=======
+    button: { text: "상세보기", url: "#" },
+>>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
   },
   {
     company: "가경뜨란채7단지",
@@ -77,7 +101,11 @@ const mainJobs = [
     experience: "경력 무관",
     education: "학력 무관",
     deadline: "2025-12-31",
+<<<<<<< HEAD
     button: { text: "상세보기", url: "detailPage.html?no=7" },
+=======
+    button: { text: "상세보기", url: "#" },
+>>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
   },
   {
     company: "힐스테이트인천시청역",
@@ -88,7 +116,11 @@ const mainJobs = [
     experience: "경력 3년 이상",
     education: "학력 무관",
     deadline: "2025-12-31",
+<<<<<<< HEAD
     button: { text: "상세보기", url: "detailPage.html?no=8" },
+=======
+    button: { text: "상세보기", url: "#" },
+>>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
   },
 ];
 
