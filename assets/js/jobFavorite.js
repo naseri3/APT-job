@@ -24,10 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // 상·하단 버튼 동기화
       favoriteBtns.forEach(b => b.classList.toggle("active", isActive));
-<<<<<<< HEAD
-=======
 
->>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
       localStorage.setItem("favorites", JSON.stringify(favorites));
     });
   });
@@ -37,20 +34,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // -----------------------------
   printBtns.forEach(btn => {
     btn.addEventListener("click", () => {
-      // 인쇄 전에 필요한 알림을 띄울 수도 있음
-      // alert("현재 페이지를 인쇄합니다.");
       window.print();
     });
   });
-});
-<<<<<<< HEAD
 
-// ===============================
-// 목록보기 버튼 → 이전 페이지로 이동
-// ===============================
-document.addEventListener("DOMContentLoaded", () => {
-  const listButtons = document.querySelectorAll(".job-action-list"); // ✅ 모든 목록보기 버튼 선택
-  listButtons.forEach((btn) => {
+  // -----------------------------
+  // ③ 목록보기 버튼 → 이전 페이지로 이동
+  // -----------------------------
+  const listButtons = document.querySelectorAll(".job-action-list"); // 모든 목록보기 버튼 선택
+  listButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       if (document.referrer) {
         history.back();
@@ -60,5 +52,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-=======
->>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de

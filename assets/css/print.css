@@ -17,7 +17,7 @@
   .job-action-apply,
   .job-action-favorite,
   .job-action-print,
-  .btn:not(.nav-link) {
+  .btn:not(.nav-link), #backToTop {
     display: none !important;
   }
 
