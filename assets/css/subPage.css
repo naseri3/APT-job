@@ -388,18 +388,13 @@ td.company {
 
 /* 지원하기 / 즐겨찾기 버튼 */
 .job-action-apply,
-<<<<<<< HEAD
 .job-action-favorite, .job-action-print, .job-action-list {
-=======
-.job-action-favorite, .job-action-print {
->>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
   width: 250px;
   font-size: 1.1rem;
   padding: 10px;
   border-radius: 10px;
   font-weight: 500;
 }
-<<<<<<< HEAD
 .job-action-favorite, .job-action-print, .job-action-list {
   background-color: #b3b3b3;
   border: none;
@@ -407,12 +402,6 @@ td.company {
 .job-action-favorite:hover, .job-action-print:hover, .job-action-list:hover {
   background-color: #b3b3b3 !important;
 }
-=======
-.job-action-favorite, .job-action-print {
-  background-color: #939393;
-  border: none;
-}
->>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
 
 /* ================================
    탭 (상세요강 / 단지정보)
@@ -489,18 +478,6 @@ td.company {
   }
 }
 
-<<<<<<< HEAD
-=======
-/* 즐겨찾기 버튼 */
-.job-action-favorite {
-  background-color: #939393;
-  color: #fff;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  border: none;
-}
-
->>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
 /* hover 시 버튼만 살짝 밝게 */
 .job-action-favorite:hover {
   background-color: #777;
@@ -508,11 +485,7 @@ td.company {
 
 /* active 상태일 때, 별만 노란색으로 */
 .job-action-favorite.active::first-letter {
-<<<<<<< HEAD
   color: #ffe100; /* 골드(노란 별) */
-=======
-  color: #FFD700; /* 골드(노란 별) */
->>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
 }
 
 /* optional: 클릭 시 약간의 강조 */
