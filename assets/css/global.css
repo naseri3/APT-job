@@ -153,9 +153,8 @@ a {
 }
 .userNav .corp {
     border:1px solid #D3D3D3;
-    width: 120px;
     text-align: center;
-    padding: 3px 0;
+    padding: 3px 15px;
     border-radius: 90px;
 }
 
@@ -237,6 +236,59 @@ a {
   fill: currentColor;
   width: 22px;
   height: 22px;
+}
+
+/* 기본 네비 */
+.serviceNav {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.serviceNav li {
+  position: relative;
+}
+
+.serviceNav a.navItem {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 12px;
+  display: block;
+}
+
+/* 드롭다운 */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  min-width: 140px;
+  display: none;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f4f4f4;
+  color: #0073e6;
+}
+
+/* hover 시 표시 */
+.dropdown:hover .dropdown-menu {
+  display: flex;
 }
 
 /* 즐겨찾기 */

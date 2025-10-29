@@ -450,6 +450,10 @@ td.company {
   font-weight: 700;
   text-align: left;
 }
+.table-section-subtitle {
+    color: #de0000 !important;
+    border-left: none !important;
+}
 .job-complex__table th {
   background-color: #fafafa;
   color: #222;

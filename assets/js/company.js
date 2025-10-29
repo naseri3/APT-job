@@ -18,6 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "한영파트너스FH", logo: "./assets/img/brandBox_logo.png", link: "./companyDetail.html?name=한영파트너스FH" },
   ];
 
+  // ✅ 가나다 순 정렬
+  companies.sort((a, b) => a.name.localeCompare(b.name, 'ko-KR'));
+
   const listContainer = document.getElementById("companyList");
 
   // ✅ 카드 렌더링

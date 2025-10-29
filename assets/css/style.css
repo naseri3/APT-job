@@ -229,7 +229,6 @@
   text-decoration: none;
   color: inherit;
 }
-<<<<<<< HEAD
 /* 프리미엄 준비중 카드 */
 .premium-card-preparation {
   border: 2px solid #ccc;
@@ -261,10 +260,6 @@
     content: "준비중...";
   }
 }
-
-
-=======
->>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
 
 /* General Styles */
 section.general {

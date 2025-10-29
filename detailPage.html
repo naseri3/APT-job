@@ -71,10 +71,10 @@
             <!-- 탭 -->
             <ul class="nav nav-tabs" id="jobTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="detail-tab" data-bs-toggle="tab" data-bs-target="#detail" type="button" role="tab">상세요강</button>
+                <button class="nav-link active" id="detail-tab" data-bs-toggle="tab" data-bs-target="#detail" type="button" role="tab">모집요강</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                <button class="nav-link" id="complex-tab" data-bs-toggle="tab" data-bs-target="#complex" type="button" role="tab">단지정보</button>
+                <button class="nav-link" id="complex-tab" data-bs-toggle="tab" data-bs-target="#complex" type="button" role="tab">근무지정보</button>
                 </li>
             </ul>
 
@@ -135,11 +135,46 @@
                     <div class="job-complex__wrap">
                         <!-- 상단 제목 -->
                         <h6 class="complex-header-title">근무지정보 (K-APT 기준)</h6>
-                        <!-- (1) 근무직원 -->
+                        <!-- (1) 기본정보 -->
                         <table class="table table-bordered align-middle job-complex__table mb-4">
                         <thead>
                             <tr>
-                            <th colspan="4" class="table-section-title">(1) 근무직원</th>
+                            <th colspan="2" class="table-section-title w-50">(1) 기본 정보</th>
+                            <th colspan="2" class="table-section-subtitle w-50 border-start-0">※ 본 정보는 K-APT 기반으로 제공되며, 실제와 다를 수 있습니다</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <th>기업명</th><td>한국지엠(주)사원임대아파트</td>
+                            <th>단지코드</th><td>아파트</td>
+                            </tr>
+                            <tr>
+                            <th>주소</th><td colspan="3">인천광역시 서구 봉오대로 331</td>
+                            </tr>
+                            <tr>
+                            <th>세대수</th><td>320.0</td>
+                            <th>분양형태</th><td>사택 및 관사 등</td>
+                            </tr>
+                            <tr>
+                            <th>분양세대</th><td>320.0</td>
+                            <th>임대세대</th><td>0</td>
+                            </tr>
+                            <tr>
+                            <th>임대세대(공공)</th><td>0</td>
+                            <th>임대세대(민간)</th><td>0</td>
+                            </tr>
+                            <tr>
+                            <th>사용승인일</th><td>19900702</td>
+                            <th>우편번호</th><td>22716</td>
+                            </tr>
+                        </tbody>
+                        </table>
+
+                        <!-- (2) 근무직원 -->
+                        <table class="table table-bordered align-middle job-complex__table mb-4">
+                        <thead>
+                            <tr>
+                            <th colspan="4" class="table-section-title">(2) 근무직원</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -165,11 +200,11 @@
                         </tbody>
                         </table>
 
-                        <!-- (2) 단지정보 -->
+                        <!-- (3) 단지정보 -->
                         <table class="table table-bordered align-middle job-complex__table">
                         <thead>
                             <tr>
-                            <th colspan="4" class="table-section-title">(2) 단지정보</th>
+                            <th colspan="4" class="table-section-title">(3) 단지정보</th>
                             </tr>
                         </thead>
                         <tbody>
