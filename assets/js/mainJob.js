@@ -11,11 +11,7 @@ const mainJobs = [
     experience: "경력 3년 이상",
     education: "학력 무관",
     deadline: "2025-12-31",
-<<<<<<< HEAD
     button: { text: "상세보기", url: "detailPage.html?no=1" },
-=======
-    button: { text: "상세보기", url: "#" },
->>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
   },
   {
     company: "신평신성미소지움아파트",
@@ -26,11 +22,7 @@ const mainJobs = [
     experience: "경력 무관",
     education: "고졸 이상",
     deadline: "2025-12-31",
-<<<<<<< HEAD
     button: { text: "상세보기", url: "detailPage.html?no=2" },
-=======
-    button: { text: "상세보기", url: "#" },
->>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
   },
   {
     company: "강서동광모닝스카이",
@@ -41,11 +33,7 @@ const mainJobs = [
     experience: "경력 5년 이상",
     education: "학력 무관",
     deadline: "2025-12-31",
-<<<<<<< HEAD
     button: { text: "상세보기", url: "detailPage.html?no=3" },
-=======
-    button: { text: "상세보기", url: "#" },
->>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
   },
   {
     company: "계약센트레빌2단지아파트",
@@ -56,11 +44,7 @@ const mainJobs = [
     experience: "경력 무관",
     education: "학력 무관",
     deadline: "2025-12-31",
-<<<<<<< HEAD
     button: { text: "상세보기", url: "detailPage.html?no=4" },
-=======
-    button: { text: "상세보기", url: "#" },
->>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
   },
   {
     company: "하안주공1단지",
@@ -71,11 +55,7 @@ const mainJobs = [
     experience: "경력 10년 이상",
     education: "학력 무관",
     deadline: "2025-12-31",
-<<<<<<< HEAD
     button: { text: "상세보기", url: "detailPage.html?no=5" },
-=======
-    button: { text: "상세보기", url: "#" },
->>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
   },
   {
     company: "양주옥정메타엑스지식산업센터",
@@ -86,11 +66,7 @@ const mainJobs = [
     experience: "경력 무관",
     education: "고졸 이상",
     deadline: "2025-12-31",
-<<<<<<< HEAD
     button: { text: "상세보기", url: "detailPage.html?no=6" },
-=======
-    button: { text: "상세보기", url: "#" },
->>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
   },
   {
     company: "가경뜨란채7단지",
@@ -101,11 +77,7 @@ const mainJobs = [
     experience: "경력 무관",
     education: "학력 무관",
     deadline: "2025-12-31",
-<<<<<<< HEAD
     button: { text: "상세보기", url: "detailPage.html?no=7" },
-=======
-    button: { text: "상세보기", url: "#" },
->>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
   },
   {
     company: "힐스테이트인천시청역",
@@ -116,11 +88,7 @@ const mainJobs = [
     experience: "경력 3년 이상",
     education: "학력 무관",
     deadline: "2025-12-31",
-<<<<<<< HEAD
     button: { text: "상세보기", url: "detailPage.html?no=8" },
-=======
-    button: { text: "상세보기", url: "#" },
->>>>>>> 79afc9e402d30041e661eea5775f3d6192e131de
   },
 ];
 
@@ -137,7 +105,7 @@ function getRandomItems(array, count) {
 }
 
 // =========================
-// 카드 생성 함수 최적화 (DocumentFragment 사용)
+// 카드 생성 함수 (최적화)
 // =========================
 function renderJobs(containerId) {
   const container = document.getElementById(containerId);
@@ -162,7 +130,7 @@ function renderJobs(containerId) {
 
   container.innerHTML = "";
 
-  const fragment = document.createDocumentFragment(); // DOM 최소 접근
+  const fragment = document.createDocumentFragment();
   jobsToShow.forEach((job) => {
     const card = document.createElement("div");
 
@@ -176,19 +144,15 @@ function renderJobs(containerId) {
         <div class="main-card-title">${job.title}</div>
         <div class="main-card-info">
           <div class="main-card-info-left">
-            ${job.location.city} > ${job.location.district} | ${
-        job.position
-      }<br>
-            월 ${job.salary.amount.toLocaleString()} (${
-        job.salary.tax_included ? "세후" : "세전"
-      })<br>
+            ${job.location.city} > ${job.location.district} | ${job.position}<br>
+            월 ${job.salary.amount.toLocaleString()} (${job.salary.tax_included ? "세후" : "세전"})<br>
             ${job.experience} | ${job.education}
           </div>
           <div class="main-card-info-right">
             <span class="main-deadline">~ ${job.deadline.slice(5)}</span>
-            <button class="btn main-btn" onclick="location.href='${
-              job.button.url
-            }'">${job.button.text}</button>
+            <button class="btn main-btn" onclick="location.href='${job.button.url}'">
+              ${job.button.text}
+            </button>
           </div>
         </div>
       `;
@@ -201,11 +165,11 @@ function renderJobs(containerId) {
 }
 
 // =========================
-// 준비중 애니메이션 최적화
+// 준비중 애니메이션
 // =========================
 let prepInterval;
 function startPreparationAnimation() {
-  if (prepInterval) clearInterval(prepInterval); // 중복 제거
+  if (prepInterval) clearInterval(prepInterval);
   const prepCards = document.querySelectorAll(".main-card-preparation");
   let dots = 0;
   prepInterval = setInterval(() => {
@@ -229,6 +193,6 @@ function initJobs() {
 }
 
 // =========================
-// DOM 접근 안전하게 body 마지막에서 호출
+// DOM 로드 후 실행
 // =========================
 initJobs();

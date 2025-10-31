@@ -1,0 +1,388 @@
+<!-- #include virtual = "/inc/sessin_top.asp" -->
+<!-- #include virtual = "/inc/inc_dbCon.asp" -->
+<!-- #include virtual = "/inc/function.asp" -->
+<!-- #include virtual = "/inc/header.asp" -->
+<%
+	Dim v_intPageSize
+	If IsEmpty(request("v_intPageSize")) Then
+		v_intPageSize=10
+	Else
+		v_intPageSize=request("v_intPageSize")
+	End If 
+
+	
+	if request("search_type")=  "Ci_name" Then
+		search_name = "기업명"
+	elseif request("search_type")=  "Ci_address2" Then
+		search_name = "주소"
+	elseif request("search_type")=  "Ci_tel" Then
+		search_name = "연락처"
+	Else
+		search_name = "전체"
+	End if
+%>
+<body class="sub">
+<div class="wrap respon">
+	<!-- /inc/header.html 에서 불러옴 -->
+	<header id="header">
+	  <!-- #include virtual = "/inc/header.asp" -->
+	</header>
+	<main class="contents">
+
+	<div class="banner banner-corp">
+		<div class="banner__inner mw1300">
+			<p class="empty"></p>
+			<h2 class="bannner__title">단지정보</h2>
+
+			<div class="breadcrump">
+				<p class="breadcrump__text">
+					<a href="/index.html" class="breadcrump__link">Home</a>
+					<a href="/subpage/corp_info.html" class="breadcrump__link">기업정보</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+
+<%
+'//검색어 자동 완성용
+sql = " select DISTINCT sWord from ( "
+sql = sql &"  select ci_name  as sWord from  job4you.dbo.company_info where ci_type=1 "
+'sql = sql &"  union all "
+'sql = sql &"  select ci_address2  as sWord from company_info "
+sql = sql &"  ) as z "
+sql = sql &"  where sWord<>'' and sWord is not null "
+
+
+Set Rs1=Con.Execute(sql)
+
+IF Rs1.EOF = False Then
+	arrList = Rs1.GetRows
+	colsnum = UBound(arrList,1)
+	rowsnum = UBound(arrList,2)
+
+End If
+
+ReDim ArrKeyword(rowsnum)
+
+If isArray(arrList) Then
+	For i=0 To rowsnum
+		ArrKeyword(i) = arrList(0, i)
+	Next
+End If
+	
+Rs1.close
+
+strkeyword = "'"& Join( ArrKeyword, "','") &"'"
+
+'debug strkeyword
+'//검색어 자동 완성용
+
+%>
+
+
+<style>
+
+
+.ui-autocomplete-corp {
+    position: absolute;
+    max-height: 200px;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    border: 1px solid #ccc !important;
+    border-radius: 8px;
+    z-index: 1;
+    list-style: none;
+    overflow-y: auto;
+}
+
+.ui-autocomplete-corp li {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #000;
+}
+
+.ui-autocomplete-corp li strong {
+    color: #0077cc;
+}
+
+.ui-helper-hidden-accessible {
+    display: none;
+}
+
+
+</style>
+<script>
+function search_type(val){
+	$("#search_type").val(val);
+}
+
+function search_crop(form)
+{
+	if(!form.search_title.value)
+	{
+
+		alert("검색어를 입력해주세요.");
+		return false;
+
+	}
+}
+
+$(document).ready(function () {
+    const data = [
+        <%=strkeyword%>
+    ];
+
+    // 자동 완성 셋업
+    $(".autocomplete-input-corp").autocomplete({
+        // 입력 문자열에 대해 필터링 된 제안을 반환하는 함수
+        source: function (request, response) {
+            const inputText = request.term.toLowerCase();
+            const filteredItems = data.filter(item => item.toLowerCase().includes(inputText));
+            response(filteredItems);
+        },
+        
+        // 자동 완성 위치 조정
+        position: { my: "left top+5" },
+
+        // 자동 완성 메뉴가 열렸을 때, 하이라이팅 로직
+        open: function () {
+            const inputText = $(".autocomplete-input-corp").val().toLowerCase();
+            // 각 제안 아이템에 대한 하이라이팅
+            $(".ui-autocomplete-corp li").each(function () {
+                const suggestion = $(this).text();
+                const index = suggestion.toLowerCase().indexOf(inputText);
+
+                if (index !== -1) {
+                    // 단어의 일부를 강조하는 HTML을 사용하여 새로운 제안 생성
+                    const highlightedPart = '<strong>${suggestion.substr(index, inputText.length)}</strong>';
+                    suggestion = suggestion.substring(0, index) + highlightedPart + suggestion.substring(index + inputText.length);
+                    // 새로운 제안으로 항목 내용을 업데이트
+                    $(this).html(suggestion);
+                }
+            });
+        },
+    });
+});
+
+</script>
+
+
+
+
+	<!-- 기업 정보 section -->
+	<section class="corp-info">
+		<div class="section__inner mw1150">
+			<!-- 검색 영역 -->
+			<div class="corp-info__search">
+				<!--h3 class="recruit__title title-24">궁금한 기업을 검색해보세요!</h3-->
+				<div>
+					<div class="select-box ml0 mr15">
+						<p class="select-box__label"><%=search_name%></p>
+      
+						<ul class="select-box__ul">
+                           <li onClick='javascript:search_type("all")'>전체</li>
+                           <li onClick='javascript:search_type("Ci_name")'>기업명</li>
+                           <li onClick='javascript:search_type("Ci_address2")'>주소</li>
+                           <li onClick='javascript:search_type("Ci_tel")'>연락처</li>
+                        </ul>
+					</div>
+                    <div class="header__search">
+                        <div class="search">
+                           <form action="corp_info.html" class="search-form" onsubmit='return search_crop(this)'>
+						   <input type='hidden' name='search_type' id='search_type' value='all'>
+                              <fieldset>
+                                 <legend class="blind">
+                                    검색창
+                                 </legend>
+                                 <input type="text" class="search-form__input autocomplete-input-corp" name='search_title' placeholder="검색어를 입력해주세요." value='<%=request("search_title")%>'>
+                                 <button type="submit" class="search-form__button">
+                                    <img src="../images/btn_search.svg" alt="검색하기">
+                                 </button>
+                              </fieldset>
+                           </form>
+                        </div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 관리사무소 div -->
+			<%
+				Dim GetTable,GetPage, intTotalCount, intTotalPage, intBlockPage, intPageSize, wc
+
+				GetPage      = request("page")
+				intPageSize  = v_intPageSize
+				intBlockPage = 10
+
+				wc = " where Ci_SEQ > 0 and address_seq is not null"
+				wc2 = " and ci_type<>1 "
+			
+				If request("search_title") <> "" Then 
+				
+					 if request("search_type")=  "Ci_name" Then
+						wc = wc &" and Ci_name like '%" & request("search_title") & "%'"
+					 elseif request("search_type")=  "Ci_address2" Then				
+						wc = wc &" and Ci_address2 like '%" & request("search_title") & "%'"
+					 elseif request("search_type")=  "Ci_tel" Then
+						wc = wc &" and Ci_tel like '%" & request("search_title") & "%'"
+					 elseif request("search_type")=  "all" Then
+						wc = wc &" and (Ci_name like '%" & request("search_title") & "%' Or Ci_address2 like '%" & request("search_title") & "%' Or Ci_tel like '%" & request("search_title") & "%')"
+					End If
+				
+				End if
+
+
+				sql = "Select Count(*)"
+				sql = sql & ",CEILING(CAST(Count(*) AS FLOAT)/" & intPageSize & ")"
+				sql = sql & " from  job4you.dbo.company_info  inner join  job4you.dbo.Company on Company_info.Ci_SEQ=Company.address_seq " & wc
+				sql = sql & wc2
+				'Response.write sql
+				Set Rs2 = Con.Execute(sql)
+				intTotalCount = Rs2(0)
+				intTotalPage = Rs2(1)
+				Rs2.Close 
+
+			%>
+			<div class="office-info">
+                <div class="result__table-top jt-r">
+                     <div class="view-wrap"></div>
+				</div>
+
+				<div class="office-info__table">
+					<table class="table table-office">
+					<colgroup>
+						<col width="20%">
+						<col width="12%">
+						<col width="*">
+						<col width="12%">
+						<col width="12%">
+					</colgroup>
+
+					<tbody>
+				<%
+					If Len(GetPage) = 0 Then
+						GetPage = 1
+					End If
+
+					sql = "SELECT TOP "& v_intPageSize &"  *, isnull(people_info, '0') as people_info  "
+					sql = sql & " from  job4you.dbo.company_info a "
+					sql = sql & " inner join  job4you.dbo.Company b on a.Ci_SEQ = b.address_seq "  
+					sql = sql & wc
+					sql = sql & wc2
+
+					sql = sql & " AND address_seq NOT IN "
+					sql = sql & " (SELECT Top "  &  Cstr(10 * (GetPage-1)) &  " address_seq from  job4you.dbo.Company "   & wc & " ORDER BY address_seq DESC) "
+					sql = sql & " ORDER BY Ci_SEQ DESC "
+					set Rs = Con.execute(sql)
+
+					order_num = intTotalCount - Int((GetPage - 1))*intPageSize
+					If not Rs.BOF Or not Rs.EOF Then 
+
+					Do Until Rs.EOF
+
+						query="select * from  job4you.dbo.Recruit "
+						query = query & " where R_status=1 and is_del is null and R_user_id='"& Rs("C_SEQ")&"'"
+						query = query & " and R_join_date2_1 <= '"&Date()&"' and R_join_date2_2  >= '"&Date()&"' "
+						query = query & inc_recruit_paywc
+						set Rs3= Con.execute(query)
+
+						If not Rs3.BOF Or not Rs3.EOF Then 
+							RecruitYN = "<a class='btn_typeF orange'>채용중</a>"
+						Else
+							RecruitYN = "-"
+						End if
+
+				%>
+					<tr>
+						<td class="tdheight_100">
+							 <span class="td_bold" style="cursor:pointer;" onclick="location.href='/subpage/office_info.html?Ci_SEQ=<%=Rs("Ci_SEQ")%>&list_search_type=<%=request("search_type")%>&list_search_title=<%=request("search_title")%>'"><%=rs("Ci_name")%></span>
+						</td>
+
+						<td>
+							<p><span>
+							<% If Rs("Ci_type")	=1 then%>
+								본사
+							<% elseIf Rs("Ci_type")	=2 then%>
+								관리사무소
+							<% Else %>
+								기타
+							<% End If %>
+							</span></p>
+						</td>
+
+						<td>
+							<div class="td__div">
+								<% If Rs("Ci_type")	=2 then%>
+								<p>
+									<span><img src="../images/main/iconn_mem.png" style="width:20px; padding-right:5px;"><%=Rs("ka_common_type")%> |  <%=Rs("people_info")%>세대 | <%=Rs("ka_dong_cnt")%>개 동 | <%=Rs("ka_parking_cnt")%>대 주차 </span>
+								</p>
+								<%End If %>
+
+								<p><img src="../images/main/iconn_map.png" style="width:20px; padding-right:5px;"><%=Rs("Ci_address2")%></p>
+								<!-- <p><img src="../images/main/iconn_tel.png" style="width:20px; padding-right:5px;"><%=Rs("Ci_tel")%></p> -->
+							</div>
+						</td>
+
+						<td>
+							<%=RecruitYN%>
+						</td>
+
+						<td>
+							<div>
+								<a href="/subpage/corp_office_info.html?Ci_SEQ=<%=Rs("Ci_SEQ")%>&list_search_type=<%=request("search_type")%>&list_search_title=<%=request("search_title")%>" class="btn_typeF d-navy">상세정보</a>
+							</div>
+							<!--div class="mt10">
+								<a href="/subpage/office_info2.html?Ci_SEQ=<%=Rs("Ci_SEQ")%>&list_search_type=<%=request("search_type")%>&list_search_title=<%=request("search_title")%>" class="btn_typeF blue">면접후기</a>
+							</div-->
+						</td>
+					</tr>
+				<%
+					order_num = order_num - 1
+					Rs.MoveNext
+					Loop
+					
+					else
+				%>
+					<tr>
+						<td colspan="6">
+							<div class="table-empty__content">
+								<p>기업 정보가 없습니다.</p>
+							</div>
+						</td>
+					</tr>
+				<%	End If %>
+
+				</tbody>
+				</table>
+
+				<div class="pagination">
+				<%
+					Dim urlcode
+					urlcode="search_type=" & request("search_type") & "&search_title=" & request("search_title")
+					Response.write M_page(GetPage,intBlockPage,intTotalPage,urlcode)
+				%>
+				</div>
+			</div>
+		</div>
+		<!-- 관리사무소 div 끝 -->
+	</section>
+	<!-- 기업 정보 section 끝 -->
+	</main>
+
+	<!-- /inc/footer.html 에서 불러옴 -->
+	<footer id="footer">
+	 <!-- #include virtual = "/inc/footer.asp" -->
+	</footer>
+
+</div>
+
+
+   <!-- /inc/float_menu.html 에서 불러옴 -->
+   <aside class="float-menu">
+      <!-- #include virtual = "/inc/float_menu.asp" -->
+   </aside>
+</body>
+
+</html>

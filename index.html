@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>아파트잡 | 아파트 전문 구인구직 플랫폼</title>
-    <link rel="icon" href="/assets/img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="/asstes/img/favicon.png" type="image/x-icon">
     <!-- bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -27,6 +27,7 @@
     />
     <link rel="stylesheet" href="./assets/css/global.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/head.css" />
   </head>
   <body>
     <!-- header -->
@@ -262,6 +263,57 @@
       </svg>
     </button>
 
+    <script>
+    (function () {
+    const isSub = location.pathname.includes("/subPage/");
+    const pathPrefix = isSub ? "../" : "./";
+
+    // ✅ header
+    const headerEl = document.querySelector("#headerWrap");
+    if (headerEl) {
+        fetch(pathPrefix + "assets/components/header.html", { cache: "no-store" })
+        .then(res => res.text())
+        .then(html => {
+            headerEl.innerHTML = html;
+            fixRelativePaths(headerEl);
+        })
+        .catch(err => console.error("Header load error:", err));
+    }
+
+    // ✅ footer
+    const footerEl = document.querySelector("#footer");
+    if (footerEl) {
+        fetch(pathPrefix + "assets/components/footer.html", { cache: "no-store" })
+        .then(res => res.text())
+        .then(html => {
+            footerEl.innerHTML = html;
+            fixRelativePaths(footerEl);
+        })
+        .catch(err => console.error("Footer load error:", err));
+    }
+
+    // ✅ 경로 자동 보정 함수
+    function fixRelativePaths(container) {
+        container.querySelectorAll("img, a, link").forEach(el => {
+        ["src", "href"].forEach(attr => {
+            if (el.hasAttribute(attr)) {
+            const val = el.getAttribute(attr);
+            if (val && !val.startsWith("http") && !val.startsWith("#")) {
+                if (val.startsWith("assets/")) {
+                el.setAttribute(attr, pathPrefix + val);
+                } else if (val.startsWith("/assets/")) {
+                el.setAttribute(attr, pathPrefix + val.replace(/^\//, ""));
+                }
+            }
+            }
+        });
+        });
+    }
+    })();
+    </script>
+
+
+
     <!-- bootstrap JS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -289,9 +341,7 @@
     <script src="./assets/js/premiumLive.js" defer></script>
     <!-- notice JS -->
     <script src="./assets/js/script.js"></script>
-     <script>
-       (function(){var a=document.querySelector("#headerWrap");fetch("./assets/components/header.html").then(r=>r.text()).then(d=>a.innerHTML=d)})();
-       fetch("./assets/components/footer.html").then(a=>a.text()).then(b=>document.querySelector("#footer").innerHTML=b);
+    <script>
        document.addEventListener("DOMContentLoaded",()=>{var a=document.getElementById("backToTop");if(!a)return;window.addEventListener("scroll",()=>{window.scrollY>300?a.classList.add("show"):a.classList.remove("show")}),a.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})})});
     </script>
   </body>

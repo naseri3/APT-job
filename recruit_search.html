@@ -14,9 +14,11 @@
     />
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/head.css">
     <link rel="stylesheet" href="./assets/css/global.css" />
     <link rel="stylesheet" href="./assets/css/recruitSearch.css">
     <link rel="stylesheet" href="./assets/css/subPage.css">
+    <link rel="stylesheet" href="/css/common.css">
 </head>
 <body>
     <script src="./assets/js/mainJob.js" defer></script>
@@ -518,9 +520,55 @@
     <script src="./assets/js/recruitSearch.js" defer></script>
     <script src="./assets/js/jobList.js" defer></script>
     <script src="./assets/js/mainJob.js" defer></script>
+        <script>
+    (function () {
+    const isSub = location.pathname.includes("/subPage/");
+    const pathPrefix = isSub ? "../" : "./";
+
+    // ✅ header
+    const headerEl = document.querySelector("#headerWrap");
+    if (headerEl) {
+        fetch(pathPrefix + "assets/components/header.html", { cache: "no-store" })
+        .then(res => res.text())
+        .then(html => {
+            headerEl.innerHTML = html;
+            fixRelativePaths(headerEl);
+        })
+        .catch(err => console.error("Header load error:", err));
+    }
+
+    // ✅ footer
+    const footerEl = document.querySelector("#footer");
+    if (footerEl) {
+        fetch(pathPrefix + "assets/components/footer.html", { cache: "no-store" })
+        .then(res => res.text())
+        .then(html => {
+            footerEl.innerHTML = html;
+            fixRelativePaths(footerEl);
+        })
+        .catch(err => console.error("Footer load error:", err));
+    }
+
+    // ✅ 경로 자동 보정 함수
+    function fixRelativePaths(container) {
+        container.querySelectorAll("img, a, link").forEach(el => {
+        ["src", "href"].forEach(attr => {
+            if (el.hasAttribute(attr)) {
+            const val = el.getAttribute(attr);
+            if (val && !val.startsWith("http") && !val.startsWith("#")) {
+                if (val.startsWith("assets/")) {
+                el.setAttribute(attr, pathPrefix + val);
+                } else if (val.startsWith("/assets/")) {
+                el.setAttribute(attr, pathPrefix + val.replace(/^\//, ""));
+                }
+            }
+            }
+        });
+        });
+    }
+    })();
+    </script>
     <script>
-       (function(){var a=document.querySelector("#headerWrap");fetch("./assets/components/header.html").then(r=>r.text()).then(d=>a.innerHTML=d)})();
-       fetch("./assets/components/footer.html").then(a=>a.text()).then(b=>document.querySelector("#footer").innerHTML=b);
        document.addEventListener("DOMContentLoaded",()=>{var a=document.getElementById("backToTop");if(!a)return;window.addEventListener("scroll",()=>{window.scrollY>300?a.classList.add("show"):a.classList.remove("show")}),a.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})})});
     </script>
 </body>

@@ -6,10 +6,13 @@
     overflow: hidden;
 }
 #subPage h2 {
-    font-size: 1.6rem;
-    font-weight: 700;
+    font-size: 30px;
+    font-weight: 700 !important;
     margin: 30px 0 20px 0;
     color: #333;
+}
+#subpage h2.bannner__title {
+    color: #fff;
 }
 #subPage h2 .small {
     font-size: 18px;
@@ -264,12 +267,64 @@ td.company {
 
 /* 페이지 네이션 */
 .pagination {
-    margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  margin-top: 30px !important;
+  background-color: transparent !important;
+  border: none !important;
 }
-.pagination .page-item.active .page-link {
-  background-color: #0d6efd; /* 파란색 배경 (Bootstrap 기본색) */
+
+/* 각 페이지 버튼 */
+.pagination .page-item .page-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;       /* 버튼 크기 키움 */
+  height: 42px;
+  font-size: 15px;
+  color: var(--point-0B2F68, #0d6efd);
+  border: 1px solid #d4d4d4;
+  background-color: #fff;
+  transition: all 0.1s ease;
+}
+
+/* hover 시 효과 */
+.pagination .page-item .page-link:hover {
+  background-color: #eaf2ff;
+  color: #0d6efd;
   border-color: #0d6efd;
-  color: #fff !important; /* ✅ 텍스트 흰색 */
+}
+
+/* active(클릭중) */
+.pagination .page-item:active .page-link {
+  background-color: #fff !important;
+  border: 1px solid #0d6efd !important;
+}
+
+/* focus (탭 이동 시) */
+.pagination .page-item:focus .page-link {
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+/* 현재 선택된 페이지 */
+.pagination .page-item.active .page-link {
+  background-color: #0d6efd !important;
+  border-color: #0d6efd !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+/* 화살표(«, ») 정렬 보정 */
+.pagination .page-item:first-child .page-link,
+.pagination .page-item:last-child .page-link {
+  font-size: 18px;
+  line-height: 1;
+  width: 42px;
+  height: 42px;
 }
 
 
