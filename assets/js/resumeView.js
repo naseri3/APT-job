@@ -254,22 +254,31 @@ document.addEventListener("DOMContentLoaded", () => {
 // ================================
 // 9. 이력서 수정하기 & 인쇄하기
 // ================================
-document.addEventListener("DOMContentLoaded", () => {
-  // ✅ 수정하기 버튼
-  document.querySelectorAll(".edit-resume-btn, .edit-resume-btn-bottom").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      window.location.href = "./resumeWrite.html";
-    });
-  });
 
-  // ✅ 인쇄하기 버튼
-  const printBtn = document.querySelector(".print-resume-btn");
-  if (printBtn) {
-    printBtn.addEventListener("click", () => {
-      window.print(); // 브라우저 인쇄 창 열기
-    });
-  }
+// ✅ 이력서 수정하기 버튼
+document.querySelectorAll(".edit-resume-btn, .edit-resume-btn-bottom").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const params = new URLSearchParams(window.location.search);
+    const rSeq = params.get("R_SEQ"); // 현재 페이지의 R_SEQ 파라미터 값 가져오기
+
+    // R_SEQ 값이 존재하면 해당 값 포함해서 이동
+    if (rSeq) {
+      window.location.href = `./resumeWrite.html?R_SEQ=${rSeq}`;
+    } else {
+      // 값이 없을 경우 기본 페이지로 이동
+      window.location.href = "./resumeWrite.html";
+    }
+  });
 });
+
+// ✅ 인쇄하기 버튼
+const printBtn = document.querySelector(".print-resume-btn");
+if (printBtn) {
+  printBtn.addEventListener("click", () => {
+    window.print(); // 브라우저 인쇄 창 열기
+  });
+}
+
 
 
 // ===============================

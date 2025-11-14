@@ -1,116 +1,191 @@
-/* -----------------------
-   ✅ 인쇄 전용 스타일
------------------------ */
 @media print {
-  @page {
-    size: A4 portrait;
-    margin: 10mm;
-  }
+    /* 용지/여백 */
+    @page {
+        size: A4 portrait;
+        margin: 10mm 12mm 10mm 12mm !important; /* 좌우 여백을 조금 더 넓게 */
+    }
 
-  body {
-    background: #fff !important;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
+    /* 전체 기본값 */
+    body {
+        background: #fff !important;
+        color: #000 !important;
+        font-family: "Pretendard", "Noto Sans KR", sans-serif !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
 
-  header, footer,
-  .job-action-apply,
-  .job-action-favorite,
-  .job-action-print,
-  .btn:not(.nav-link), #backToTop {
-    display: none !important;
-  }
+    main {
+        background-color: #fff !important;
+    }
 
-  #subPage.job-detail.container {
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
-  }
+    /* 화면 전용 요소 숨김 */
+    #header,
+    #footer,
+    #backToTop,
+    .btn,
+    .print-hide {
+        display: none !important;
+    }
 
-  /* ✅ endDate 인쇄 강제 표시 */
-  h3 .endDate {
-    display: inline-block !important;
-    float: none !important; /* float 제거 */
-    position: relative !important;
-    color: #e60000 !important;
-    font-size: 1.5rem !important;
-    font-weight: 600 !important;
-    margin-left: 8px !important;
-    vertical-align: middle !important;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-    margin-left: 20px !important;
-  }
+    /* 컨테이너 폭/패딩 초기화 */
+    #subPage.job-detail.container {
+        width: 95% !important;
+        max-width: 95% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        background: #fff !important;
+        border: none !important; /* 🔥 채용정보 아래 div 테두리 제거 */
+    }
 
-  /* ✅ 혹시 브라우저가 잘라도 대비 */
-  h3 {
-    overflow: visible !important;
-    white-space: nowrap !important;
-  }
+    /* 상단 타이틀 “채용정보” + 파란 라인 */
+    h2 {
+        font-size: 30px !important;
+        font-weight: 700 !important;
+        margin: 0 0 0px 0 !important;
+        color: #000 !important;
+        padding-bottom: 8px !important;
+    }
 
-  .job-summary {
-    overflow: visible !important;
-  }
+    /* 회사명 */
+    h4 {
+        font-size: 18px !important;
+        color: #555 !important;
+        font-weight: 600 !important;
+        margin: 0px 0 6px 0 !important;
+    }
 
-  .nav-tabs {
-    display: flex !important;
-    margin-bottom: 15px !important;
-  }
+    /* 공고명 + 날짜(오른쪽 끝) */
+    h3 {
+        position: relative !important;
+        font-size: 26px !important;
+        font-weight: 800 !important;
+        color: #000 !important;
+        margin: 0px 0 0px 0 !important;
+        line-height: 1.35 !important;
+        overflow: hidden !important;
+        border-bottom: 1px solid #d7d7d7 !important;
+        padding-bottom: 10px !important;
+    }
 
-  .nav-tabs .nav-link {
-    display: inline-block !important;
-    color: #515151 !important;
-    padding: 8px 16px !important;
-    margin-right: 4px !important;
-    font-weight: bold !important;
-    -webkit-print-color-adjust: exact !important;
-  }
+    h3 .endDate {
+        float: none !important; /* 🔥 float 완전히 해제 */
+        display: inline-block !important;
+        color: #e60000 !important;
+        font-size: 20px !important;
+        font-weight: 600 !important;
+        margin-left: 20px !important;
+        margin-right: 5mm !important; /* 🔥 오른쪽 여유 추가 */
+        white-space: nowrap !important;
+    }
 
-  .nav-tabs .nav-link.active {
-    color: #0071f3 !important;
-  }
+    /* 요약 3분할 박스 (지원조건/근무조건/단지정보) */
+    .job-summary {
+        background: #fff !important;
+        width: 100% !important; /* 오른쪽 잘림 방지 */
+        box-sizing: border-box !important;
+        margin: 0 auto 16px auto !important;
+        page-break-inside: avoid !important;
+    }
 
-  #jobTabContent {
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
+    /* 부트스트랩 row/gap 영향 제거 */
+    .job-summary .row {
+        display: flex !important;
+        gap: 0 !important;
+        margin: 0 !important;
+    }
 
-  .table {
-    font-size: 15px;
-    border: 0.5px solid #7a7a7a;
-    width: 1020px !important;
-    border-collapse: collapse !important;
-  }
 
-  th {
-    background: #f2f2f2 !important;
-    -webkit-print-color-adjust: exact;
-    width: 15% !important;
-    padding: 10px !important;
-  }
+    .job-summaryBox-requirement,
+    .job-summaryBox-condition,
+    .job-summaryBox-complex {
+        border-right: 1px solid #bfbfbf !important;
+        padding: 14px 16px !important;
+        box-sizing: border-box !important;
+        vertical-align: top !important;
+        word-break: break-word !important;
+    }
+    .job-summaryBox-requirement,
+    .job-summaryBox-condition {
+        width: 350px !important;
+    }
 
-  h2, h3 {
-    color: #000 !important;
-    margin-bottom: 10px;
-  }
+    .job-summaryBox-complex:last-child {
+        border-right: none !important;
+    }
 
-  .job-summary, .job-detail__table, .job-complex__table {
-    page-break-inside: avoid;
-  }
+    .job-summary h6 {
+        font-size: 15px !important;
+        font-weight: 700 !important;
+        color: #000 !important;
+        margin: 0 0 6px 0 !important;
+    }
 
-  .job-summary-group {
-    border: 0 none !important;
-  }
+    .job-summary li {
+        font-size: 14px !important;
+        color: #333 !important;
+        margin: 3px 0 !important;
+        line-height: 1.5 !important;
+    }
 
-  .job-summaryBox-requirement,
-  .job-summaryBox-complex,
-  .job-summaryBox-condition {
-    border-top: 1px solid #a8a8a8 !important;
-    border-bottom: 1px solid #a8a8a8 !important;
-  }
+    /* 탭·버튼 숨김 */
+    .job-action-list,
+    .job-action-apply,
+    .job-action-favorite,
+    .job-action-print {
+        display: none !important;
+    }
 
-  .job-summaryBox-complex {
-    border-left: 1px solid #a8a8a8 !important;
-  }
+    .nav-tabs {
+        margin-bottom: 10px !important;
+    }
+    #jobTabContent {
+        border: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* 표 스타일 */
+    table {
+        width: 80% !important;
+        border-collapse: collapse !important;
+        table-layout: fixed !important;
+        background: #fff !important;
+        color: #222 !important;
+        font-size: 14px !important;
+        word-break: break-word !important;
+        page-break-inside: avoid !important;
+    }
+
+    th,
+    td {
+        border: 1px solid #ccc !important;
+        padding: 10px 12px !important;
+        vertical-align: middle !important;
+        text-align: left !important;
+    }
+    th {
+        background: #f5f6f8 !important;
+        width: 10% !important;
+        font-weight: 600 !important;
+        color: #000 !important;
+        -webkit-print-color-adjust: exact !important;
+    }
+
+    td {
+        color: #333 !important;
+        white-space: normal !important;
+        word-break: break-all !important;
+    }
+
+    /* 링크 꼬리(URL) 제거 */
+    a[href]:after {
+        content: "" !important;
+    }
+
+    /* 페이지 번호 (옵션) */
+    @bottom-right {
+        content: counter(page) " / " counter(pages);
+        font-size: 12px;
+        color: #888;
+    }
 }

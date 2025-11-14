@@ -9,7 +9,6 @@ body {
     min-width: 1320px;
     margin: 0 auto;
     overflow-x: auto;
-    background-color: #f9fafc;
     box-sizing: border-box;
     color: #212121;
 }
@@ -45,22 +44,33 @@ a {
     margin: 0;
     padding: 0;
 }
+main {
+    background-color: #f9fafc;
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
 
+#headerWrap {
+    background-color: #f9fafc;
+}
 
 /* footer */
 footer {
     width: 100%;
     background: #fff;
+    border-top: 1px solid #D3D3D3 !important;
+}
+.site-footer {
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #D3D3D3 !important;
 }
 .footer-inner {
     max-width: 1280px;
     margin: 0 auto;
-    margin-top: 50px;
     color: #333;
     padding: 20px 0;
     font-size: 14px;
-    margin-top: 50px;
-    border-top: 1px solid #D3D3D3;
 }
 .footer-info p {
   margin: 2px 5px;
@@ -166,3 +176,17 @@ footer {
     color: orange;
   }
   
+  /* 마이페이지 즐겨찾기 버튼 */
+  .myPage-favorite-star {
+    font-size: 25px !important;
+    cursor: pointer;
+    transition: color 0.25s ease, transform 0.2s ease;
+    user-select: none;
+  }
+    .myPage-favorite-star.active {
+    color: orange;
+    transform: scale(1.3);
+  }
+  .myPage-favorite-star:hover {
+    color: orange;
+  }

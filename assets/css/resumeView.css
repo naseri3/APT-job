@@ -36,11 +36,14 @@
     padding: 0;
 }
 #resumeView-title h1 {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     color: #969696;
+    font-weight: bold;
 }
 .input-title {
     color: #333333;
+    font-size: 25px;
+    font-weight: 600;
 }
 
 /* ===============================
@@ -50,6 +53,7 @@
     width: 200px;
     float: right;
     font-size: 16px;
+	font-weight:700;
 }
 
 /* ===============================
@@ -110,8 +114,14 @@
 }
 .userView-Birth {
     color: #666666;
+	margin-top:10px;
 }
-
+.mt-1 {
+    margin-top: 15px !important;
+}
+.mt-3 {
+	margin-top: 30px !important;
+}
 /* ===============================
   🔹 희망 조건
   =============================== */
@@ -170,7 +180,8 @@
 #portfolio-box h4 {
     padding: 15px 0;
     color: #0056b3;
-    font-weight: 500;
+    font-weight: 700;
+	font-size:25px;
 }
 
 /* ===============================
@@ -220,6 +231,8 @@
 .self-introduction-item .text-secondary,
 .portfolio-item .text-secondary {
     color: #666666 !important;
+	font-size:16px;
+	line-height : 1.5;
 }
 /* ===============================
   🔹 경력/신입 배지 
@@ -250,6 +263,8 @@
   =============================== */
 #userName {
     margin-left: 10px;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 /* ===============================
@@ -266,8 +281,9 @@
   =============================== */
 .total-career {
     color: #d32f2f;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 700;
+	margin-left:10px;
 }
 .career-task li::marker {
     color: #999999;
@@ -380,7 +396,7 @@
     border: none;
     color: #fff;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 700;
     border-radius: 5px;
     width: 300px;
     padding: 10px;
@@ -390,7 +406,7 @@
   background-color: #6c757d; /* ✅ 회색 */
   color: #fff;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 700;
   border-radius: 5px;
   width: 300px;
   padding: 10px;
@@ -404,82 +420,135 @@
 
 
 /* ===========================================
-   🖨️ 인쇄 시 화면 그대로 출력 (디자인 유지)
+   🖨️ 인쇄 시 실제 화면과 동일하게 출력
    =========================================== */
 @media print {
-  html, body {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-    background: #fff !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    zoom: 1 !important;
+  @page {
+    size: A4 portrait;
+    margin: 8mm 10mm 8mm 10mm; /* 위/아래 8mm, 좌우 10mm 여백 */
   }
 
-  /* ✅ header, footer, 버튼류만 숨김 */
+  html, body {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 14px !important;
+    color: #000 !important;
+  }
+
+  /* 불필요한 영역 숨김 */
   header,
   footer,
   .resume-bottom-btn,
   .navbar,
-  .btn,
+  #backToTop,
+  .edit-resume-btn,
   .edit-resume-btn-bottom,
-  #backToTop {
+  .print-resume-btn {
     display: none !important;
   }
 
-  /* ✅ 나머지는 화면 그대로 유지 */
-  body * {
-    visibility: visible !important;
-    transform: none !important;
-    position: static !important;
-  }
-  /* ✅ 컨테이너 중앙정렬 깨짐 방지 */
-  .container {
-    max-width: none !important;
-    width: 100% !important;
-    padding: 0 !important;
-    margin: 0 auto !important;
-  }
-
-  /* ✅ 인쇄용에서 강제 줄바꿈 방지 */
+  /* 전체 레이아웃 */
   #resume-view {
-    page-break-before: auto;
-    page-break-after: auto;
-    page-break-inside: avoid;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 10mm !important;
+    background: #fff !important;
   }
 
-  /* ✅ 프로필/이력서 영역 고정 (틀 깨짐 방지) */
+  #resume-view > .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* 인쇄시 배경/색상 유지 */
+  .desired-field,
+  .employment-item,
+  .career-item,
+  .training-item,
+  .certificates-item,
+  .preference-item,
+  .self-introduction-item,
+  .portfolio-item {
+    background-color: #fff !important;
+    color: #000 !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  /* 프로필 영역 고정 */
   #personal-box {
     display: flex !important;
-    flex-wrap: nowrap !important;
     align-items: flex-start !important;
+    flex-wrap: nowrap !important;
+    margin-bottom: 10px !important;
   }
 
   #personal-box .photo-box-view {
-    flex: 0 0 auto !important;
-    margin-right: 1rem !important;
+    width: 180px !important;
+    height: 230px !important;
+    margin-right: 20px !important;
   }
 
   #personal-box .col-8 {
     flex: 1 !important;
   }
 
-  #personal-box .ms-4 {
-    margin-left: 0.25rem !important; /* Bootstrap ms-1 값 */
+  /* 제목 및 구분선 */
+  #resumeView-title h1 {
+    font-size: 22px !important;
+    color: #000 !important;
+    margin-bottom: 20px !important;
   }
 
-  /* ✅ 여백 최소화 (왼쪽 들뜸 방지) */
-  main#resume-view {
-    margin: 0 !important;
-    padding: 0 10mm !important;
+  h4 {
+    color: #000 !important;
+    border-bottom: 2px solid #000 !important;
+    padding-bottom: 5px !important;
+    margin-top: 25px !important;
   }
 
-  /* 희망지역 */
+  /* 경력/학력/항목 리스트 */
+  .employment-item,
+  .career-item,
+  .training-item,
+  .certificates-item,
+  .preference-item,
+  .self-introduction-item,
+  .portfolio-item {
+    border-bottom: 1px solid #ccc !important;
+    padding: 10px 5px !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* 배경색/보더 유지 */
   .desired-field {
-    font-size: 0.8rem !important;
-    font-weight: normal !important;
+    border: 1px solid #ccc !important;
+    background: #fff !important;
   }
-  .etesys-mark {
-    display: none !important;
+
+  /* 링크 밑줄 제거 */
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+
+  /* 페이지 나눔 방지 */
+  .employment-item,
+  .career-item,
+  .training-item,
+  .certificates-item,
+  .preference-item,
+  .self-introduction-item,
+  .portfolio-item {
+    page-break-inside: avoid !important;
+  }
+
+  /* 여백 및 가독성 개선 */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
   }
 }

@@ -1,18 +1,18 @@
-#headerWrap {
+header {
     position: relative;
     z-index: 4;
     zoom: 1;
     width: 100%;
     background-color: #fff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
 }
-#headerWrap #header {
+#header {
     width: 100%;
-    padding-top: 20px;
+    padding-top: 10px;
     margin: 0 auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
-#headerWrap #header .headInner {
+#header .headInner {
     max-width: 1280px;
     width: 100%;
     margin: 10px auto;
@@ -23,41 +23,41 @@
     z-index: 5;
 }
 /* logo */
-#headerWrap #header .headInner .logo img {
+#header .headInner .logo img {
     width: 150px;
 }
-#headerWrap #header .headInner #searchWrap {
+#header .headInner #searchWrap {
     position: relative;
     display: inline-block;
 }
-#headerWrap #header .headInner #searchWrap .search-icon {
+#header .headInner #searchWrap .search-icon {
     position: absolute;
     left: 10px;
     top: 50%;
     transform: translateY(-60%);
     pointer-events: none;
 }
-#headerWrap #header .headInner #searchWrap input {
+#header .headInner #searchWrap input {
     width: 850px;
     padding: 7px 12px 7px 35px; 
     border: 3px solid #0055DB;
     border-radius: 5px;
 }
-#headerWrap #header .headInner #searchWrap input:focus {
+#header .headInner #searchWrap input:focus {
     outline: none;
     border: 3px solid #0055DB; 
 }
-#headerWrap #header .headInner #searchWrap input::placeholder {
+#header .headInner #searchWrap input::placeholder {
     font-size: 14px;
     font-weight: 500;
     color: #a1a1a1;
 }
-#headerWrap #header .headInner .etesys {
+#header .headInner .etesys {
     font-size: 16px;
     font-weight: 700;
     display: flex;
 }
-#headerWrap #header .headInner .etesys a.bann-etesys::before {
+#header .headInner .etesys a.bann-etesys::before {
     content: "";
     display: inline-block;
     width: 36px;
@@ -68,10 +68,10 @@
     background-size: cover;
     vertical-align: middle;
 }
-#headerWrap #header #headNavBar {
+#header #headNavBar {
     max-width: 1280px;
     width: 100%;
-    margin: 10px auto;
+    margin: 10px auto 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -80,23 +80,23 @@
     padding: 10px 0 15px;
 
 }
-#headerWrap #header #headNavBar .aptNavArea .serviceNav {
+#header #headNavBar .aptNavArea .serviceNav {
     display: flex;
     align-items: center;
     gap: 50px;
     list-style: none;
 }
-#headerWrap #header #headNavBar .aptNavArea .serviceNav .navItem {
+#header #headNavBar .aptNavArea .serviceNav .navItem {
     font-size: 18px;
     font-weight: 600;
     color: #333;
     position: relative;
     padding: 0px 0;
 }
-#headerWrap #header #headNavBar .aptNavArea .serviceNav .navItem:hover {
+#header #headNavBar .aptNavArea .serviceNav .navItem:hover {
     color: #0055DB;
 }
-#headerWrap #header #headNavBar .userNav {
+#header #headNavBar .userNav {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -104,7 +104,7 @@
     font-size: 15px;
     color: #757575;
 }
-.userNav .corp {
+.userNav .corp, .userNav .mypage {
     border:1px solid #D3D3D3;
     text-align: center;
     padding: 3px 15px;
