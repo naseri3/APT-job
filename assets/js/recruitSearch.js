@@ -111,6 +111,33 @@ function updateSelectedBox() {
         });
         selectedBox.appendChild(line);
     }
+    syncUpperRegionActive();
+}
+
+
+/***************************************************
+ * 상위 지역(active) 자동 반영 기능
+ ***************************************************/
+function syncUpperRegionActive() {
+    const regionButtons = document.querySelectorAll(".region-options .btn");
+
+    regionButtons.forEach((btn) => {
+        const upperName = btn.textContent.trim();
+
+        // 전국은 별도 처리
+        if (upperName === "전국") return;
+
+        // selectedRegions에 "서울 >", "경기 >", "부산 >" 같은 prefix가 있는지 확인
+        const hasThisRegion = selectedRegions.some((r) =>
+            r.startsWith(`${upperName} >`)
+        );
+
+        if (hasThisRegion) {
+            btn.classList.add("active");
+        } else {
+            btn.classList.remove("active");
+        }
+    });
 }
 
 
