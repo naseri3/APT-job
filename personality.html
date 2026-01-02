@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지역/직무 채용 정보 | 아파트잡</title>
+    <link rel="icon" href="/assets/img/favicon.png" type="image/x-icon">
+    <!-- bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/head.css">
+    <link rel="stylesheet" href="./assets/css/global.css" />
+    <link rel="stylesheet" href="./assets/css/subPage.css">
+</head>
+<body>
+    <script src="./assets/js/mainJob.js" defer></script>
+    <!-- header -->
+    <header id="headerWrap"></header>
+
+    <main style="padding-bottom:0 !important">
+		<div class="personality-banner">
+			<img src="./assets/img/personality_main_img.png" />
+		</div>
+        <section id="subPage" class="personality">
+			<div class="assessment-wrapper">
+				<div class="assessment-item personality-test">
+					<h3 class="assessment-item-title">인성검사</h3>
+					<p>9가지 핵심 지표를 통해 공동주택/집합건물 관리에 최적화된<BR>
+						나의 성향과 업무 스타일을 객관적으로 파악합니다.<BR>
+						200 문항 / 60분<p>
+					<div class="assessment-item-btn">
+						<a href="./order-confirm.html"><button class="assessment-btn is-apply">신청하기</button></a>
+					</div>
+				</div>
+				<div class="assessment-item job-skill-test">
+					<h3 class="assessment-item-title">직무 능력 검사</h3>
+					<p>공동주택/집합건물 관리 분야별, 관리 현장에서의<BR>
+						실무 능력을 검증하는 검사입니다. <BR><BR></p>
+					<div class="assessment-item-btn">
+						<button class="assessment-btn is-disabled">준비중</button>
+					</div>
+				</div>
+			</div>
+        </section>
+		<div class="customer-service">
+			<div class="customer-service__inner">
+				<h2 class="customer-service__title">
+					<img src="/images/service_icon.png" class="customer-service__icon" alt="" />
+					고객센터
+				</h2>
+				<div class="customer-service__contact">
+					<span class="customer-service__call">070-4616-0890</span>
+					<span class="customer-service__email">aptjob@aptjob.net</span>
+				</div>
+			</div>
+		</div>
+	</main>
+
+    <!-- footer -->
+    <footer id="footer" class="site-footer"></footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="back-to-top" aria-label="맨 위로 이동" title="맨 위로" type="button">
+      <!-- 단순한 화살표 아이콘 (SVG) -->
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 4l-8 8h5v8h6v-8h5z"></path>
+      </svg>
+    </button>
+    <!-- 라이브러리 먼저 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <!-- 커스텀 JS (의존성 순서) -->
+    <script src="./assets/js/login.js"></script>
+    
+    <script>
+    (function () {
+    const isSub = location.pathname.includes("/subPage/");
+    const pathPrefix = isSub ? "../" : "./";
+
+    // ✅ header
+    const headerEl = document.querySelector("#headerWrap");
+    if (headerEl) {
+        fetch(pathPrefix + "assets/components/header.html", { cache: "no-store" })
+        .then(res => res.text())
+        .then(html => {
+            headerEl.innerHTML = html;
+            fixRelativePaths(headerEl);
+        })
+        .catch(err => console.error("Header load error:", err));
+    }
+
+    // ✅ footer
+    const footerEl = document.querySelector("#footer");
+    if (footerEl) {
+        fetch(pathPrefix + "assets/components/footer.html", { cache: "no-store" })
+        .then(res => res.text())
+        .then(html => {
+            footerEl.innerHTML = html;
+            fixRelativePaths(footerEl);
+        })
+        .catch(err => console.error("Footer load error:", err));
+    }
+
+    // ✅ 경로 자동 보정 함수
+    function fixRelativePaths(container) {
+        container.querySelectorAll("img, a, link").forEach(el => {
+        ["src", "href"].forEach(attr => {
+            if (el.hasAttribute(attr)) {
+            const val = el.getAttribute(attr);
+            if (val && !val.startsWith("http") && !val.startsWith("#")) {
+                if (val.startsWith("assets/")) {
+                el.setAttribute(attr, pathPrefix + val);
+                } else if (val.startsWith("/assets/")) {
+                el.setAttribute(attr, pathPrefix + val.replace(/^\//, ""));
+                }
+            }
+            }
+        });
+        });
+    }
+    })();
+    </script>
+    <script>
+       document.addEventListener("DOMContentLoaded",()=>{var a=document.getElementById("backToTop");if(!a)return;window.addEventListener("scroll",()=>{window.scrollY>300?a.classList.add("show"):a.classList.remove("show")}),a.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})})});
+    </script>
+</body>
+</html>

@@ -553,3 +553,251 @@ td.company {
   background-color: #777; /* 살짝 어두운 회색 유지 */
 }
 
+/* personality.html CSS */
+.personality-banner {
+	background-color:#2D74B4;
+	text-align:center;
+	margin-top:-10px;
+}
+.personality-banner img {
+	width:1000px;
+}
+.assessment-wrapper {
+	display: flex;
+	padding: 10px;
+	gap: 50px;
+}
+.assessment-item {
+	background-color:#fff;
+	border:1px solid #d1d1d1;
+	border-radius: 10px;
+	padding:20px;
+	flex: 1 1;
+	text-align:center;
+}
+.assessment-item-title {
+	font-size: 30px;
+	font-weight:bold;
+	margin-bottom:10px;
+}
+.assessment-item p {
+	line-height:1.5;
+	font-size:16px;
+}
+.assessment-item-btn .assessment-btn {
+	width:70%;
+	border: none;
+	border-radius:90px;
+	padding:10px;
+	font-weight:bold;
+	color:#fff;
+	margin-top:20px;
+	font-size:18px;
+}
+.is-apply {
+	background-color:#0055DB;
+}
+.is-disabled {
+	background-color:#AAAAAA;
+}
+.customer-service__icon {
+	width:45px;
+}
+.customer-service {
+	background-color:#2D457D;
+	margin-top:50px;
+	color:#fff;
+	display:flex;
+	justify-content:center;
+	padding:20px;
+}
+.customer-service__inner {
+	width:1280px;
+}
+.customer-service__contact {
+	font-size:30px;
+	margin-top:20px;
+	font-weight:bold;
+}
+.customer-service__email {
+	margin-left:50px;
+}
+.customer-service__email a {
+	text-decoration: none;
+}
+
+
+
+/* order-confirm.html CSS */
+
+/* 서비스 선택 테이블 */
+.survey-service-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+  font-size: 18px;
+}
+.survey-service-table thead th {
+  border-top: 2px solid #777;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 8px;
+  text-align: center;
+  font-weight: 600;
+}
+.survey-service-table tbody td {
+  border-bottom: 2px solid #777;
+  padding: 12px 8px;
+  text-align: center;
+}
+.survey-service-table .col-check {
+  width: 40px;
+  text-align: center;
+}
+
+/* 체크박스 크기 */
+.survey-service .survey-service-table .col-check input[type="checkbox"] {
+  appearance: auto;
+  -webkit-appearance: auto;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  background-color: #fff;
+  cursor: pointer;
+  accent-color: #0055DB; 
+}
+
+/* 약관 공통 영역 */
+.terms-section {
+  padding: 16px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.terms-title {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.terms-list {
+  margin: 0 0 20px 0;
+  background-color:#fff;
+  padding: 10px;
+  border: 1px solid #d1d1d1;
+}
+.terms-list ul li {
+  margin-bottom: 5px;
+  list-style: disc;
+  margin-left: 20px;
+}
+.terms-list ol li {
+  margin-bottom: 5px;
+  list-style: decimal;
+  margin-left: 20px;
+}
+.terms-list ol li:last-child {
+  list-style: none;
+  margin-left: 0;
+}
+.terms-privacy, .terms-third {
+   margin-top:40px;
+}
+
+/*  동의 체크 영역 */
+.agree-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+.agree-item input[type="checkbox"] {
+  appearance: auto;
+  -webkit-appearance: auto;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  background-color: #fff;
+  cursor: pointer;
+  accent-color: #0055DB; 
+}
+.agree-item label {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* 전체 동의 */
+.agree-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  font-weight: 600;
+  font-size: 18px;
+}
+.agree-all input[type="checkbox"] {
+  appearance: auto;
+  -webkit-appearance: auto;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  background-color: #fff;
+  cursor: pointer;
+  accent-color: #0055DB; 
+}
+.agree-all label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+
+/* 결제 영역 */
+.payment-box {
+  padding: 20px 0;
+}
+.payment-method {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 16px;
+  border: 1px solid #d1d1d1;
+  background-color: #fff;
+  font-size: 18px;
+}
+.payment-method label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.payment-method input[type="radio"] {
+  appearance: auto;
+  -webkit-appearance: auto;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  background-color: #fff;
+  cursor: pointer;
+  accent-color: #0055DB; 
+}
+
+/* 결제 버튼 */
+.btn-submit {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 50px;
+  background: #0D6EFD;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  margin-top:40px;
+}
+.btn-submit:hover {
+  background: #0B5ED7;
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지역/직무 채용 정보 | 아파트잡</title>
+    <link rel="icon" href="/assets/img/favicon.png" type="image/x-icon">
+    <!-- bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/head.css">
+    <link rel="stylesheet" href="./assets/css/global.css" />
+    <link rel="stylesheet" href="./assets/css/subPage.css">
+</head>
+<body>
+    <script src="./assets/js/mainJob.js" defer></script>
+    <!-- header -->
+    <header id="headerWrap"></header>
+
+    <main>
+		<section id="subPage">
+			<h2>인성검사 신청하기</h2>
+			<!-- 서비스 선택 -->
+			<div id="surveyServiceSection" class="survey-service" />
+				<table class="survey-service-table">
+					<thead>
+						<tr>
+							<th class="col-check">
+							  <input type="checkbox" aria-label="전체 선택">
+							</th>
+							<th class="col-service">서비스명</th>
+							<th class="col-price">가격</th>
+						</tr>
+					</thead>
+					<tbody>
+					  <tr class="service-item">
+						<td class="col-check">
+						  <input type="checkbox" checked>
+						</td>
+						<td class="service-name">
+						  인성검사 (200문항 / 60분)
+						</td>
+						<td class="service-price">
+						  11,000원
+						</td>
+					  </tr>
+					</tbody>
+				</table>
+			 
+				<!-- 검사 안내 -->
+				<div id="surveyGuideSection" class="terms-section terms-guide">
+				  <h5 class="terms-title">검사 안내 및 유효기간</h5>
+					<div class="terms-list">
+					  <ul>
+						<li>인적성검사의 실시 가능 유효기간은 결제일로부터 30일까지입니다. 30일 전에 검사를 완료해 주시기를 바랍니다.</li>
+						<li>제출완료 된 답안은 수정이 불가능하며, 재 응시 등은 불가합니다.</li>
+						<li>결제일로부터 30일이 경과하기 전까지 환불을 요청할 수 있습니다. 다만 30일이 경과하였거나, 이미 검사가 시작되면 환불이 불가합니다.</li>
+						<li>검사결과의 열람가능 기간은 검사 완료일로부터 2년까지이며, 2년 내 결과만 입사지원시 첨부할 수 있습니다.</li>
+						<li>아파트잡의 인성검사는 외부 전문기관(㈜한국직무능력평가연구소)의 표준화된 기준에 따라 실시됩니다. 아파트잡은 검사의 결과에 대한 해석과 판정에 관여하지 않습니다.</li>
+						<li>기타 문의사항은 아파트잡 고객센터 070-4616-0890(10시~17시(12~13시 점심시간))로 문의해주시기 바랍니다.</li>
+					  </ul>
+					</div>
+
+				  <div class="agree-item">
+					<input type="checkbox" id="agreeGuide" required>
+					<label for="agreeGuide">검사 안내 확인 및 결제진행에 동의</label>
+				  </div>
+				</div>
+
+
+				<!-- 개인정보 수집 -->
+				<div id="privacyCollectSection" class="terms-section terms-privacy">
+				  <h5 class="terms-title">[필수] 개인정보 수집 및 이용에 관한 동의</h5>
+
+				<div class="terms-list">
+					<ol>
+						<li>수집 및 이용 목적 : 구직자의 개인 특성 분석 및 입사지원시 참고자료로 활용</li>
+						<li>수집하는 민감정보 항목 : 인성검사 결과, 직무능력검사 결과</li>
+						<li>민감정보 보유 및 이용 기간: 검사 완료일로부터 2년 후 파기</li>
+						<li>※ 동의를 거부할 수 있으며, 다만 이 경우에는 인성검사, 직무능력검사 서비스 이용이 불가합니다.</li>
+					</ol>
+				</div>
+
+				  <div class="agree-item">
+					<input type="checkbox" id="agreePrivacy" required>
+					<label for="agreePrivacy">개인정보 수집 및 이용에 관한 동의</label>
+				  </div>
+				</div>
+
+
+				<!-- 제3자 제공 -->
+				<div id="privacyShareSection" class="terms-section terms-third">
+				  <h5 class="terms-title">[필수] 개인정보 제3자 제공에 대한 동의</h5>
+
+				<div class="terms-list">
+					<ol>
+						<li>제공받는 자 : 인적성검사를 첨부하여 입사지원한 기업, 응시자가 받은 면접제안에 동의한 기업</li>
+						<li>제공 항목 : 인성검사 결과, 직무능력검사 결과</li>
+						<li>제공 목적 : 구직자의 개인 특성 분석 및 인적성검사 결과를 채용과정에 참고</li>
+						<li>보유 및 이용기간 : 입사지원 후 90일. 단, 위 기간 내이라도 인성검사 결과의 유효기간(검사일로부터 2년)이 만료될 경우 제공 중단</li>
+						<li>※ 동의를 거부할 수 있으며, 다만 이 경우에는 인성검사, 직무능력검사 서비스 이용이 불가합니다.</li>
+					</ol>
+				</div>
+
+				  <div class="agree-item">
+					<input type="checkbox" id="agreeThird" required>
+					<label for="agreeThird">개인정보 제3자 제공에 대한 동의</label>
+				  </div>
+				</div>
+
+
+				<!-- 전체 동의 -->
+				<div class="agree-all">
+				  <input type="checkbox" id="agreeAll">
+				  <label for="agreeAll">전체 동의</label>
+				</div>
+
+
+				<!-- 결제 -->
+				<div id="paymentSection" class="payment-box">
+				<h5 class="terms-title">결제 방법</h5>
+				  <div class="payment-method">
+					<label>
+					  <input type="radio" name="paymentMethod" value="card" checked>
+					  신용카드
+					</label>
+					<label>
+					  <input type="radio" name="paymentMethod" value="bank">
+					  은행계좌이체
+					</label>
+				  </div>
+
+				  <button type="button" class="btn-submit">결제하기</button>
+				</div>
+			</div>
+		</section>
+	</main>
+
+    <!-- footer -->
+    <footer id="footer" class="site-footer"></footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="back-to-top" aria-label="맨 위로 이동" title="맨 위로" type="button">
+      <!-- 단순한 화살표 아이콘 (SVG) -->
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 4l-8 8h5v8h6v-8h5z"></path>
+      </svg>
+    </button>
+    <!-- 라이브러리 먼저 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <!-- 커스텀 JS (의존성 순서) -->
+    <script src="./assets/js/login.js"></script>
+    <script src="./assets/js/full-agreement.js"></script>
+    
+    <script>
+    (function () {
+    const isSub = location.pathname.includes("/subPage/");
+    const pathPrefix = isSub ? "../" : "./";
+
+    // ✅ header
+    const headerEl = document.querySelector("#headerWrap");
+    if (headerEl) {
+        fetch(pathPrefix + "assets/components/header.html", { cache: "no-store" })
+        .then(res => res.text())
+        .then(html => {
+            headerEl.innerHTML = html;
+            fixRelativePaths(headerEl);
+        })
+        .catch(err => console.error("Header load error:", err));
+    }
+
+    // ✅ footer
+    const footerEl = document.querySelector("#footer");
+    if (footerEl) {
+        fetch(pathPrefix + "assets/components/footer.html", { cache: "no-store" })
+        .then(res => res.text())
+        .then(html => {
+            footerEl.innerHTML = html;
+            fixRelativePaths(footerEl);
+        })
+        .catch(err => console.error("Footer load error:", err));
+    }
+
+    // ✅ 경로 자동 보정 함수
+    function fixRelativePaths(container) {
+        container.querySelectorAll("img, a, link").forEach(el => {
+        ["src", "href"].forEach(attr => {
+            if (el.hasAttribute(attr)) {
+            const val = el.getAttribute(attr);
+            if (val && !val.startsWith("http") && !val.startsWith("#")) {
+                if (val.startsWith("assets/")) {
+                el.setAttribute(attr, pathPrefix + val);
+                } else if (val.startsWith("/assets/")) {
+                el.setAttribute(attr, pathPrefix + val.replace(/^\//, ""));
+                }
+            }
+            }
+        });
+        });
+    }
+    })();
+    </script>
+    <script>
+       document.addEventListener("DOMContentLoaded",()=>{var a=document.getElementById("backToTop");if(!a)return;window.addEventListener("scroll",()=>{window.scrollY>300?a.classList.add("show"):a.classList.remove("show")}),a.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})})});
+    </script>
+</body>
+</html>
