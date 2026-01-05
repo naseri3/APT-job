@@ -247,6 +247,10 @@ footer {
     width: 30px;
     height: 30px;
 }
+.social_login .naver_login span img {
+    width: 25px;
+    height: 25px;
+}
 .google_login {
     background-color: #448AFF;
     color: #fff;
