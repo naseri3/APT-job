@@ -64,4 +64,5 @@ const authCode = params.get("code");
 
 if (authCode) {
   console.log("구글 로그인 성공, code:", authCode);
+  alert("구글 로그인 성공!");
 }
