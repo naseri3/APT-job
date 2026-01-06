@@ -24,22 +24,15 @@ if (authCode) {
 
 
 /** 네이버 로그인 API */
-var naver_id_login = new naver_id_login(
-  "hLO6jennO8FmeKMz2ntZ",
-  "https://aptjob.netlify.app/login.html"
-);
+document.addEventListener("DOMContentLoaded", function () {
+  var naver_id_login = new naver_id_login(
+    "hLO6jennO8FmeKMz2ntZ",
+    "https://aptjob.netlify.app/login.html"
+  );
 
-var state = naver_id_login.getUniqState();
-
-naver_id_login.setButton("white", 2, 40);
-naver_id_login.setDomain("https://aptjob.netlify.app");
-naver_id_login.setState(state);
-naver_id_login.setPopup();
-naver_id_login.init_naver_id_login();
-naver_id_login.getLoginStatus(function (status) {
-  if (status) {
-    console.log(naver_id_login.user);
-  } else {
-    console.log("네이버 로그인 실패");
-  }
+  var state = naver_id_login.getUniqState();
+  naver_id_login.setButton("white", 2, 40);
+  naver_id_login.setState(state);
+  naver_id_login.setPopup();
+  naver_id_login.init_naver_id_login();
 });

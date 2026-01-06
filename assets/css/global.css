@@ -258,6 +258,7 @@ footer {
 .naver_login {
     background-color: #04CF5C;
     color: #fff;
+    text-align: center;
 }
 .kakao_login {
     background-color: #FEE500;
