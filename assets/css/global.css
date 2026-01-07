@@ -242,3 +242,14 @@ footer {
     justify-content: center;
     font-weight: 500;
 }
+.social_login .google_login {
+    border: 1px solid #E7E7E7;
+    border-radius: 5px;
+    background-color: #fff;
+    color:#B3B3B3;
+    padding: 7px;
+}
+.social_login .google_login img {
+    width: 25px;
+    margin-right: 5px;
+}
