@@ -247,9 +247,13 @@ footer {
     border-radius: 5px;
     background-color: #fff;
     color:#B3B3B3;
-    padding: 7px;
+    padding: 7px 12px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .social_login .google_login img {
     width: 25px;
-    margin-right: 5px;
+    margin-right: 10px;
 }
