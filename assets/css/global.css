@@ -233,33 +233,12 @@ footer {
 }
 .social_login .login-btn {
     width: 100%;
-    padding: 10px;
+    /* padding: 10px; */
     border: none;
     border-radius: 10px;
-    font-size: 20px;
+    /* font-size: 20px; */
+    display: flex;
     align-items: center;
+    justify-content: center;
     font-weight: 500;
-}
-.social_login .login-btn span {
-    float: left;
-}
-.social_login .login-btn span img {
-    width: 30px;
-    height: 30px;
-}
-.social_login .naver_login span img {
-    width: 25px;
-    height: 25px;
-}
-.google_login {
-    background-color: #448AFF;
-    color: #fff;
-}
-.naver_login {
-    background-color: #04CF5C;
-    color: #fff;
-    text-align: center;
-}
-.kakao_login {
-    background-color: #FEE500;
 }
